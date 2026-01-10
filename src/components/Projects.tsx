@@ -83,8 +83,8 @@ export default function Projects() {
                 key={cat.id}
                 onClick={() => setActiveFilter(cat.id)}
                 className={`text-xs uppercase tracking-widest font-bold transition-all relative pb-2 ${activeFilter === cat.id
-                    ? 'text-primary'
-                    : 'text-charcoal/30 hover:text-charcoal'
+                  ? 'text-primary'
+                  : 'text-charcoal/30 hover:text-charcoal'
                   }`}
               >
                 {cat.label}
@@ -98,7 +98,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project) => (
               <motion.div
                 layout
                 key={project.id}
