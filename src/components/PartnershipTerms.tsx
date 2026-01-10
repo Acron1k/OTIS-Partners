@@ -1,99 +1,85 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 
-const tiers = [
+const privileges = [
   {
-    name: "Architect",
-    reward: "10%",
-    description: "Для масштабных объектов и сложного остекления.",
-    features: [
-      "Техническая поддержка (DWG/BIM)",
-      "Расчет статических нагрузок",
-      "Приоритетный менеджер проекта",
-      "Шеф-монтаж на объекте",
-    ]
-  },
-  {
-    name: "Designer",
-    reward: "10%",
-    popular: true,
-    description: "Максимальная гибкость для творческих интерьеров.",
-    features: [
+    target: "Дизайнерам",
+    items: [
       "Partner Box с образцами материалов",
-      "3D модели всех коллекций",
-      "Выплата бонусов в день оплаты",
-      "Фотосессия готового объекта",
+      "Полная база 3D моделей (3ds Max, Revit)",
+      "Фотосессия реализованного объекта",
+      "Упоминание в наших соцсетях"
     ]
   },
   {
-    name: "Homestager",
-    reward: "10%",
-    description: "Быстрые решения для инвест-проектов.",
-    features: [
+    target: "Архитекторам",
+    items: [
+      "Техническое сопровождение (DWG/BIM)",
+      "Расчет сложных статических нагрузок",
+      "Помощь в проектировании узлов",
+      "Шеф-монтаж на объекте"
+    ]
+  },
+  {
+    target: "Хоумстейджерам",
+    items: [
       "Готовые модули со склада",
-      "Монтаж за 48 часов",
-      "Бюджетная линейка Slim",
-      "Экспресс-коннект с замерщиком",
+      "Монтаж в сжатые сроки (от 48 часов)",
+      "Специальная бюджетная линейка",
+      "Экспресс-выезд замерщика"
     ]
   }
 ];
 
 export default function PartnershipTerms() {
   return (
-    <section id="terms" className="py-32 bg-sand-50 relative overflow-hidden">
-      {/* Decorative vertical lines */}
-      <div className="absolute top-0 bottom-0 left-1/4 w-[1px] bg-charcoal/5 hidden lg:block" />
-      <div className="absolute top-0 bottom-0 left-2/4 w-[1px] bg-charcoal/5 hidden lg:block" />
-      <div className="absolute top-0 bottom-0 left-3/4 w-[1px] bg-charcoal/5 hidden lg:block" />
+    <section id="terms" className="py-24 bg-charcoal text-sand-50">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-baseline mb-24">
-          <div className="max-w-xl">
-            <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Membership</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-black text-charcoal leading-none">
-              Выигрывают <br /><span className="italic font-light">все.</span>
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.4em] font-extrabold text-primary mb-4 block text-left">Условия</span>
+            <h2 className="text-4xl md:text-6xl font-black leading-tight mb-8">
+              Честный процент <br />в <span className="text-primary italic">прозрачном партнерстве.</span>
             </h2>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          {tiers.map((tier, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: index * 0.2 }}
-              className={`p-12 md:p-16 flex flex-col items-start ${index !== 2 ? 'md:border-r border-charcoal/5' : ''} ${tier.popular ? 'bg-sand-100/50' : ''}`}
+            <div className="flex items-baseline gap-4 mb-12">
+              <span className="text-8xl md:text-[10rem] font-black text-primary leading-none">10%</span>
+              <span className="text-xl md:text-2xl font-bold uppercase tracking-widest text-sand-50/40">Комиссия</span>
+            </div>
+            <p className="text-lg text-sand-50/50 mb-12 max-w-md font-medium">
+              Мы не просто платим за рекомендации. Мы создаем инфраструктуру, помогающую вам реализовывать проекты быстрее и качественнее.
+            </p>
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-primary text-sand-50 px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-sand-50 hover:text-charcoal transition-all duration-500"
             >
-              <div className="mb-12">
-                <h3 className="text-sm font-bold uppercase tracking-[.3em] text-primary mb-6">{tier.name}</h3>
-                <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-5xl sm:text-6xl md:text-7xl font-serif font-black text-charcoal">{tier.reward}</span>
-                </div>
-                <p className="text-charcoal/50 font-light leading-relaxed">
-                  {tier.description}
-                </p>
-              </div>
+              Присоедениться к программе
+            </button>
+          </div>
 
-              <div className="space-y-6 mb-16 flex-grow w-full">
-                {tier.features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-4 border-b border-charcoal/5 pb-4 last:border-0 hover:pl-2 transition-all duration-300 group">
-                    <Check className="w-4 h-4 text-primary mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="text-xs uppercase tracking-widest font-bold text-charcoal/80">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className={`w-full py-6 text-[11px] sm:text-[10px] md:text-[10px] font-bold uppercase tracking-[.3em] transition-all duration-500 border border-charcoal ${tier.popular ? 'bg-charcoal text-sand-50 hover:bg-primary hover:border-primary' : 'hover:bg-charcoal hover:text-sand-50'
-                  }`}
+          <div className="space-y-12">
+            {privileges.map((group, idx) => (
+              <motion.div
+                key={group.target}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white/5 p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-colors"
               >
-                Join Program
-              </button>
-            </motion.div>
-          ))}
+                <h3 className="text-xl font-bold mb-6 text-primary uppercase tracking-widest text-xs">{group.target}</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {group.items.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <Check className="w-4 h-4 text-primary shrink-0" />
+                      <span className="text-sm font-medium text-sand-50/70 italic">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 const Header = lazy(() => import('./components/Header'))
 const Hero = lazy(() => import('./components/Hero'))
 const Benefits = lazy(() => import('./components/Benefits'))
+const ProductsExpertise = lazy(() => import('./components/ProductsExpertise'))
 const HowItWorks = lazy(() => import('./components/HowItWorks'))
 const PartnershipTerms = lazy(() => import('./components/PartnershipTerms'))
 const Projects = lazy(() => import('./components/Projects'))
@@ -33,6 +34,10 @@ function App() {
 
       <Suspense fallback={<SectionLoader />}>
         <Benefits />
+      </Suspense>
+
+      <Suspense fallback={<SectionLoader />}>
+        <ProductsExpertise />
       </Suspense>
 
       <Suspense fallback={<SectionLoader />}>

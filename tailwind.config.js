@@ -7,12 +7,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Outfit', 'sans-serif'],
+        sans: ['Manrope', 'sans-serif'],
       },
       colors: {
         primary: {
-          DEFAULT: '#B35C44', // Terracotta
+          DEFAULT: '#B35C44', // Терракотовый
           50: '#fbf5f3',
           100: '#f6ebe7',
           200: '#edd8d1',
@@ -25,7 +24,7 @@ export default {
           900: '#592f25',
         },
         sand: {
-          50: '#FAF9F6', // Bone / Off-white
+          50: '#FAF9F6', // Кость
           100: '#F2F0E9',
           200: '#E5E0D1',
           300: '#D1C8B0',
@@ -37,12 +36,9 @@ export default {
         }
       },
       letterSpacing: {
-        tighter: '-0.05em',
-        tight: '-0.025em',
-        widest: '0.2em',
-      },
-      backgroundImage: {
-        'grain': "url('https://grain-y.com/images/grain.png')",
+        tighter: '-0.04em',
+        tight: '-0.01em',
+        widest: '0.1em',
       }
     },
   },
