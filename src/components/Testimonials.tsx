@@ -51,10 +51,10 @@ export default function Testimonials() {
           </div>
           <div className="flex gap-4">
             <button onClick={prevSlide} className="p-3 md:p-4 border border-sand-50/10 hover:border-primary transition-colors rounded-full">
-              <ChevronLeft size={18} md:size={20} />
+              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
             </button>
             <button onClick={nextSlide} className="p-3 md:p-4 border border-sand-50/10 hover:border-primary transition-colors rounded-full">
-              <ChevronRight size={18} md:size={20} />
+              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
         </div>

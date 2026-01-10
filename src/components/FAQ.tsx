@@ -55,7 +55,7 @@ export default function FAQ() {
                     {faq.question}
                   </span>
                   <div className={`flex-shrink-0 ml-4 transition-transform duration-500 ${openIndex === index ? 'rotate-180' : ''}`}>
-                    {openIndex === index ? <Minus size={16} md:size={18} className="text-primary" /> : <Plus size={16} md:size={18} className="text-charcoal/20" />}
+                    {openIndex === index ? <Minus className="w-4 h-4 md:w-[18px] md:h-[18px] text-primary" /> : <Plus className="w-4 h-4 md:w-[18px] md:h-[18px] text-charcoal/20" />}
                   </div>
                 </button>
                 <AnimatePresence>
