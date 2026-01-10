@@ -63,7 +63,7 @@ export default function PartnershipTerms() {
                 key={group.target}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ delay: idx * 0.1 }}
                 className="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-colors"
               >
@@ -72,7 +72,7 @@ export default function PartnershipTerms() {
                   {group.items.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 md:gap-3">
                       <Check className="w-3 h-3 md:w-4 md:h-4 text-primary shrink-0" />
-                      <span className="text-[10px] md:text-sm font-medium text-sand-50/70 italic">{item}</span>
+                      <span className="text-xs md:text-sm font-medium text-sand-50/70 italic">{item}</span>
                     </div>
                   ))}
                 </div>

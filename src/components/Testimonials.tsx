@@ -69,7 +69,7 @@ export default function Testimonials() {
               transition={{ duration: 0.5 }}
               className="grid lg:grid-cols-[1fr_2fr] gap-8 md:gap-12 items-center"
             >
-              <div className="relative aspect-square max-w-[120px] md:max-w-none mx-auto w-full lg:w-48 overflow-hidden rounded-2xl shadow-2xl">
+              <div className="relative aspect-square w-[140px] md:w-48 mx-auto overflow-hidden rounded-2xl shadow-2xl">
                 <img
                   src={testimonials[currentIndex].image}
                   alt={testimonials[currentIndex].name}
