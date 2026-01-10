@@ -34,7 +34,7 @@ export default function Hero() {
               className="mb-6 flex items-center gap-4"
             >
               <div className="h-[1px] w-12 bg-primary" />
-              <span className="text-[10px] uppercase tracking-[.4em] font-bold text-primary">
+              <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase tracking-[.4em] font-bold text-primary">
                 Interior Partnership Program
               </span>
             </motion.div>
@@ -43,7 +43,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
-              className="text-6xl sm:text-8xl lg:text-[10rem] font-serif font-black leading-[0.85] text-charcoal tracking-tighter"
+              className="text-4xl sm:text-6xl lg:text-8xl xl:text-[10rem] font-serif font-black leading-[0.85] text-charcoal tracking-tighter"
             >
               Эстетика <br />
               <span className="italic font-light">прибыли.</span>
@@ -98,16 +98,16 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.8 }}
               className="absolute -bottom-12 -right-6 lg:-right-12 bg-sand-50 p-10 border border-charcoal/5 shadow-2xl max-w-xs hidden sm:block"
             >
-              <span className="block text-[10px] uppercase tracking-[.3em] font-bold text-primary mb-4">Quality Index</span>
+              <span className="block text-[11px] sm:text-[10px] md:text-[10px] uppercase tracking-[.3em] font-bold text-primary mb-4">Quality Index</span>
               <p className="font-serif text-2xl italic mb-4">«Каждая деталь имеет значение в архитектуре света»</p>
               <div className="flex justify-between items-end">
                 <div>
                   <p className="text-3xl font-black text-charcoal leading-none">200+</p>
-                  <p className="text-[10px] uppercase font-bold text-charcoal/40">Партнёров</p>
+                  <p className="text-[11px] sm:text-[10px] md:text-[10px] uppercase font-bold text-charcoal/40">Партнёров</p>
                 </div>
                 <div className="text-right">
                   <p className="text-3xl font-black text-charcoal leading-none">10М+</p>
-                  <p className="text-[10px] uppercase font-bold text-charcoal/40">Выплачено</p>
+                  <p className="text-[11px] sm:text-[10px] md:text-[10px] uppercase font-bold text-charcoal/40">Выплачено</p>
                 </div>
               </div>
             </motion.div>
@@ -116,7 +116,7 @@ export default function Hero() {
       </div>
 
       {/* Background Large Text Stroke */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 z-0 font-serif font-black text-[25vw] leading-none text-charcoal/5 italic pointer-events-none select-none">
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 z-0 font-serif font-black text-[25vw] leading-none text-charcoal/5 italic pointer-events-none select-none overflow-hidden whitespace-nowrap">
         OTIS
       </div>
     </section>

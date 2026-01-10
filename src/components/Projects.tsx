@@ -56,17 +56,17 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-12">
           <div className="max-w-2xl">
             <span className="text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Archive</span>
-            <h2 className="text-5xl md:text-7xl font-serif font-black text-charcoal leading-none">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-black text-charcoal leading-none">
               Избранные <br /><span className="italic font-light text-stroke text-charcoal">экспозиции.</span>
             </h2>
           </div>
 
-          <div className="flex flex-wrap gap-8 border-b border-charcoal/10 pb-4">
+          <div className="flex flex-wrap gap-4 sm:gap-8 border-b border-charcoal/10 pb-4">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveFilter(cat.id)}
-                className={`text-[10px] uppercase tracking-widest font-bold transition-all relative ${activeFilter === cat.id
+                className={`text-[10px] sm:text-xs uppercase tracking-widest font-bold transition-all relative py-2 px-1 ${activeFilter === cat.id
                     ? 'text-primary'
                     : 'text-charcoal/40 hover:text-charcoal'
                   }`}

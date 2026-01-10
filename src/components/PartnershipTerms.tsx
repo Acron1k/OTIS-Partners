@@ -49,8 +49,8 @@ export default function PartnershipTerms() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-baseline mb-24">
           <div className="max-w-xl">
-            <span className="text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Membership</span>
-            <h2 className="text-5xl md:text-7xl font-serif font-black text-charcoal leading-none">
+            <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Membership</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-black text-charcoal leading-none">
               Выигрывают <br /><span className="italic font-light">все.</span>
             </h2>
           </div>
@@ -69,7 +69,7 @@ export default function PartnershipTerms() {
               <div className="mb-12">
                 <h3 className="text-sm font-bold uppercase tracking-[.3em] text-primary mb-6">{tier.name}</h3>
                 <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-7xl font-serif font-black text-charcoal">{tier.reward}</span>
+                  <span className="text-5xl sm:text-6xl md:text-7xl font-serif font-black text-charcoal">{tier.reward}</span>
                 </div>
                 <p className="text-charcoal/50 font-light leading-relaxed">
                   {tier.description}
@@ -87,7 +87,7 @@ export default function PartnershipTerms() {
 
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className={`w-full py-6 text-[10px] font-bold uppercase tracking-[.3em] transition-all duration-500 border border-charcoal ${tier.popular ? 'bg-charcoal text-sand-50 hover:bg-primary hover:border-primary' : 'hover:bg-charcoal hover:text-sand-50'
+                className={`w-full py-6 text-[11px] sm:text-[10px] md:text-[10px] font-bold uppercase tracking-[.3em] transition-all duration-500 border border-charcoal ${tier.popular ? 'bg-charcoal text-sand-50 hover:bg-primary hover:border-primary' : 'hover:bg-charcoal hover:text-sand-50'
                   }`}
               >
                 Join Program

@@ -29,8 +29,8 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-32 bg-sand-50 border-y border-charcoal/5">
       <div className="container mx-auto px-6">
         <div className="text-center mb-32">
-          <span className="text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Process</span>
-          <h2 className="text-5xl md:text-7xl font-serif font-black text-charcoal">
+          <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Process</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-black text-charcoal">
             Путь к <span className="italic font-light">совершенству.</span>
           </h2>
         </div>
@@ -50,7 +50,7 @@ export default function HowItWorks() {
                 className="relative group"
               >
                 <div className="flex flex-col items-center lg:items-start">
-                  <span className={`text-8xl font-serif font-black mb-8 transition-transform duration-500 group-hover:-translate-y-2 inline-block ${styles.stepNumber}`}>
+                  <span className={`text-6xl sm:text-7xl md:text-8xl font-serif font-black mb-8 transition-transform duration-500 group-hover:-translate-y-2 inline-block ${styles.stepNumber}`}>
                     {step.id}
                   </span>
                   <h3 className="text-xl font-bold uppercase tracking-[.2em] text-charcoal mb-4">

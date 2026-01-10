@@ -66,8 +66,8 @@ export default function Benefits() {
             viewport={{ once: true }}
             className="max-w-xl"
           >
-            <span className="text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Standards</span>
-            <h2 className="text-5xl md:text-7xl font-serif font-black text-charcoal leading-none">
+            <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Standards</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-black text-charcoal leading-none">
               Инфраструктура <br /><span className="italic font-light">вашего успеха.</span>
             </h2>
           </motion.div>

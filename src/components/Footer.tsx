@@ -44,7 +44,7 @@ export default function Footer() {
             >
               <div className="mb-6">
                 <span className="text-3xl font-black tracking-widest text-sand-50 block">OTIS</span>
-                <span className="text-[10px] tracking-[0.3em] font-bold text-primary block mt-1">ARCHITECTURAL</span>
+                <span className="text-[11px] sm:text-[10px] md:text-[10px] tracking-[0.3em] font-bold text-primary block mt-1">ARCHITECTURAL</span>
               </div>
               <p className="text-sand-50/60 leading-relaxed text-sm">
                 Мы создаем перегородки, которые влюбляют. Партнёрская программа для архитекторов и дизайнеров.
@@ -60,7 +60,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="text-[10px] uppercase font-bold tracking-widest text-primary mb-6 block">Контакты</span>
+              <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase font-bold tracking-widest text-primary mb-6 block">Контакты</span>
               <div className="space-y-4">
                 <a href="tel:+79990000000" className="flex items-center gap-3 text-sand-50/80 hover:text-primary transition-colors group">
                   <Phone className="w-4 h-4 text-sand-50/40 group-hover:text-primary transition-colors" />
@@ -86,7 +86,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <span className="text-[10px] uppercase font-bold tracking-widest text-primary mb-6 block">Навигация</span>
+              <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase font-bold tracking-widest text-primary mb-6 block">Навигация</span>
               <ul className="space-y-3">
                 {navLinks.map((link, index) => (
                   <motion.li
@@ -121,7 +121,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-[10px] uppercase font-bold tracking-widest text-primary mb-6 block">Соцсети</span>
+              <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase font-bold tracking-widest text-primary mb-6 block">Соцсети</span>
               <div className="space-y-4">
                 {socialLinks.map((link, index) => (
                   <motion.a

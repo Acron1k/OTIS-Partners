@@ -31,7 +31,7 @@ export default function Testimonials() {
         <div className="grid lg:grid-cols-2 gap-24 items-center">
 
           <div className="order-2 lg:order-1">
-            <span className="text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-8 block">Voices</span>
+            <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-8 block">Voices</span>
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -40,13 +40,13 @@ export default function Testimonials() {
                 exit={{ opacity: 0, x: 30 }}
                 transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
               >
-                <p className="text-4xl md:text-5xl font-serif italic font-light mb-16 leading-tight">
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif italic font-light mb-16 leading-tight">
                   «{testimonials[currentIndex].content}»
                 </p>
                 <div className="flex items-center justify-between border-t border-sand-50/10 pt-12">
                   <div>
                     <h4 className="text-2xl font-serif font-bold tracking-tight mb-2">{testimonials[currentIndex].name}</h4>
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-primary">{testimonials[currentIndex].role}</p>
+                    <p className="text-[11px] sm:text-[10px] md:text-[10px] uppercase tracking-widest font-bold text-primary">{testimonials[currentIndex].role}</p>
                   </div>
                   <div className="flex gap-4">
                     <button onClick={prevSlide} className="p-4 border border-sand-50/20 hover:border-primary transition-colors">
@@ -80,7 +80,7 @@ export default function Testimonials() {
               </motion.div>
             </AnimatePresence>
             {/* Floating text stroke */}
-            <div className="absolute -bottom-12 -left-12 font-serif text-8xl font-black text-stroke text-sand-50/10 pointer-events-none">
+            <div className="absolute -bottom-12 -left-12 font-serif text-6xl sm:text-8xl font-black text-stroke text-sand-50/10 pointer-events-none hidden sm:block">
               REVIEW
             </div>
           </div>

@@ -34,7 +34,7 @@ export default function Header() {
       transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
       className={`fixed top-0 left-0 right-0 z-[100] ${styles.header} ${isScrolled ? styles.scrolled : 'py-8'}`}
     >
-      <div className="container mx-auto px-6 overflow-hidden">
+      <div className="container mx-auto px-6 overflow-hidden w-full">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div
@@ -42,7 +42,7 @@ export default function Header() {
             onClick={() => scrollToSection('#hero')}
           >
             <span className="text-xl font-bold tracking-widest text-charcoal">OTIS</span>
-            <span className="text-[10px] tracking-[0.3em] font-medium text-primary mt-[-4px] group-hover:pl-2 transition-all duration-500">
+            <span className="text-[11px] sm:text-[10px] md:text-[10px] tracking-[0.3em] font-medium text-primary mt-[-4px] group-hover:pl-2 transition-all duration-500">
               ARCHITECTURAL
             </span>
           </div>
@@ -57,7 +57,7 @@ export default function Header() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className={`text-xs font-semibold text-charcoal/70 hover:text-primary transition-colors ${styles.navLink}`}
+                className={`text-xs font-semibold text-charcoal/70 hover:text-primary transition-colors py-2 ${styles.navLink}`}
               >
                 {link.name}
               </a>
@@ -73,7 +73,7 @@ export default function Header() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-charcoal z-[110]"
+            className="md:hidden text-charcoal z-[110] p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

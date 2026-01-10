@@ -29,8 +29,8 @@ export default function FAQ() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-24">
           <div className="lg:w-1/3">
-            <span className="text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Knowledge</span>
-            <h2 className="text-5xl md:text-7xl font-serif font-black text-charcoal leading-none mb-12">
+            <span className="text-[11px] sm:text-[10px] md:text-[10px] uppercase tracking-[.4em] font-bold text-primary mb-4 block">Knowledge</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-black text-charcoal leading-none mb-12">
               Вопросы и <br /><span className="italic font-light">ответы.</span>
             </h2>
             <p className="text-charcoal/50 font-light leading-relaxed mb-12">
@@ -49,12 +49,12 @@ export default function FAQ() {
               <div key={index} className="border-b border-charcoal/10">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full py-10 flex items-center justify-between text-left group"
+                  className="w-full py-10 flex items-center justify-between text-left group min-h-[60px]"
                 >
                   <span className="text-xl md:text-2xl font-serif font-bold text-charcoal group-hover:text-primary transition-colors">
                     {faq.question}
                   </span>
-                  <div className={`flex-shrink-0 ml-8 transition-transform duration-500 ${openIndex === index ? 'rotate-180' : ''}`}>
+                  <div className={`flex-shrink-0 ml-8 transition-transform duration-500 p-4 -m-4 ${openIndex === index ? 'rotate-180' : ''}`}>
                     {openIndex === index ? <Minus size={20} className="text-primary" /> : <Plus size={20} className="text-charcoal/30" />}
                   </div>
                 </button>
