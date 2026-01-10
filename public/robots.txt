@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://otis-partner.vercel.app/sitemap.xml
