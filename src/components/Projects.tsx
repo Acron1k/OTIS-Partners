@@ -99,6 +99,7 @@ export default function Projects() {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                    loading="lazy"
                   />
                   <div className="absolute top-6 left-6 bg-sand-50/90 backdrop-blur px-4 py-2 text-[10px] font-bold uppercase tracking-widest">
                     {project.category}

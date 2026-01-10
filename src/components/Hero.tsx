@@ -85,6 +85,8 @@ export default function Hero() {
                 src="/images/partitions/partition-1.jpg"
                 alt="OTIS Partition"
                 className="w-full h-[120%] object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
               <div className="absolute inset-0 bg-charcoal/5 mix-blend-multiply" />
             </motion.div>
