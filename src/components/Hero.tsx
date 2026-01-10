@@ -77,7 +77,7 @@ export default function Hero() {
                   />
                 ))}
                 <div className="flex items-center justify-center h-10 w-10 rounded-full ring-2 ring-sand-50 bg-sand-100 text-[10px] font-bold text-charcoal/50">
-                  +200
+                  +20
                 </div>
               </div>
             </motion.div>
@@ -108,11 +108,11 @@ export default function Hero() {
             >
               <div className="flex justify-between items-end border-b border-charcoal/5 pb-4">
                 <div>
-                  <p className="text-3xl font-black text-charcoal leading-none mb-1">200+</p>
+                  <p className="text-3xl font-black text-charcoal leading-none mb-1">20+</p>
                   <p className="text-[10px] uppercase font-bold text-charcoal/40 tracking-widest">Партнёров</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-3xl font-black text-primary leading-none mb-1">10М+</p>
+                  <p className="text-3xl font-black text-primary leading-none mb-1">3М+</p>
                   <p className="text-[10px] uppercase font-bold text-charcoal/40 tracking-widest text-right">Выплачено</p>
                 </div>
               </div>

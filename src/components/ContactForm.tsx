@@ -1,7 +1,8 @@
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { motion } from 'framer-motion';
+import InputMask from 'react-input-mask';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Представьтесь, пожалуйста'),
@@ -14,13 +15,25 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export default function ContactForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+  const { register, handleSubmit, control, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      phone: ''
+    }
   });
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
-    alert('Заявка отправлена. Мы свяжемся с вами в ближайшее время!');
+    // Очистка номера телефона от маски для отправки (только цифры)
+    const cleanPhone = data.phone.replace(/\D/g, '');
+    // Гарантируем формат +7... даже если ввели 8...
+    const formattedPhone = cleanPhone.startsWith('8')
+      ? '+7' + cleanPhone.slice(1)
+      : cleanPhone.startsWith('7')
+        ? '+' + cleanPhone
+        : '+7' + cleanPhone;
+
+    console.log({ ...data, phone: formattedPhone });
+    alert(`Заявка отправлена. Мы свяжемся с вами в ближайшее время!\nТелефон для CRM: ${formattedPhone}`);
   };
 
   return (
@@ -36,15 +49,15 @@ export default function ContactForm() {
             <div className="grid sm:grid-cols-2 gap-10">
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase font-extrabold tracking-widest text-sand-50/20 mb-3 block">Адрес</span>
-                <p className="text-lg font-bold text-sand-50">Москва, Центр дизайна Artplay</p>
+                <p className="text-lg font-bold text-sand-50">г. Москва, Дмитровское шоссе 71Б, офис 403</p>
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase font-extrabold tracking-widest text-sand-50/20 mb-3 block">Email</span>
-                <p className="text-lg font-bold text-sand-50">partners@otis-walls.ru</p>
+                <a href="mailto:peregorodki-otis@yandex.ru" className="text-lg font-bold text-sand-50 hover:text-primary transition-colors">peregorodki-otis@yandex.ru</a>
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase font-extrabold tracking-widest text-sand-50/20 mb-3 block">Телефон</span>
-                <p className="text-xl font-bold text-sand-50">8 (800) 555-35-35</p>
+                <a href="tel:+79955008882" className="text-xl font-bold text-sand-50 hover:text-primary transition-colors">+7 (995) 500-88-82</a>
               </div>
             </div>
           </div>
@@ -77,10 +90,26 @@ export default function ContactForm() {
 
               <div className="grid md:grid-cols-2 gap-10">
                 <div className="relative">
-                  <input
-                    {...register('phone')}
-                    placeholder="Телефон"
-                    className="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary outline-none transition-colors placeholder:text-sand-50/20 font-medium"
+                  <Controller
+                    name="phone"
+                    control={control}
+                    render={({ field }) => (
+                      <InputMask
+                        mask="+7 (999) 999-99-99"
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={field.onBlur}
+                      >
+                        {(inputProps: any) => (
+                          <input
+                            {...inputProps}
+                            type="text"
+                            placeholder="Телефон: +7 (___) ___-__-__"
+                            className="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary outline-none transition-colors placeholder:text-sand-50/20 font-medium"
+                          />
+                        )}
+                      </InputMask>
+                    )}
                   />
                   {errors.phone && <span className="text-[10px] text-primary absolute -bottom-6 left-0 uppercase font-black tracking-widest">{errors.phone.message}</span>}
                 </div>

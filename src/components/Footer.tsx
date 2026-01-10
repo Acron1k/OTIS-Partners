@@ -31,13 +31,13 @@ export default function Footer() {
               <span className="text-[10px] uppercase font-extrabold tracking-widest text-charcoal/30 mb-2">Партнерам</span>
               <a href="#faq" className="text-sm font-bold hover:text-primary transition-colors italic">FAQ</a>
               <a href="#contact" className="text-sm font-bold hover:text-primary transition-colors italic">Стать партнером</a>
-              <a href="#" className="text-sm font-bold hover:text-primary transition-colors italic text-primary">Telegram</a>
+              <a href="https://t.me/otis_group_peregorodki" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-primary transition-colors italic text-primary">Telegram канал</a>
             </div>
             <div className="flex flex-col space-y-4 col-span-2 md:col-span-1">
               <span className="text-[10px] uppercase font-extrabold tracking-widest text-charcoal/30 mb-2">Соцсети</span>
               <div className="flex gap-6">
-                <a href="#" className="text-xs uppercase tracking-widest font-black border-b border-charcoal/10 hover:border-primary transition-all pb-1">Instagram</a>
-                <a href="#" className="text-xs uppercase tracking-widest font-black border-b border-charcoal/10 hover:border-primary transition-all pb-1">Bēhance</a>
+                <a href="https://vk.com/otis_peregorodki" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest font-black border-b border-charcoal/10 hover:border-primary transition-all pb-1">ВКонтакте</a>
+                <a href="https://t.me/otis_group_peregorodki" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest font-black border-b border-charcoal/10 hover:border-primary transition-all pb-1">Telegram</a>
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-charcoal/5 pt-12 gap-6">
           <p className="text-[10px] uppercase font-extrabold tracking-widest text-charcoal/30">
-            © {currentYear} OTIS Gmbh. Все права защищены.
+            © {currentYear} OTIS. Все права защищены.
           </p>
           <div className="flex gap-8">
             <a href="#" className="text-[10px] uppercase font-extrabold tracking-widest text-charcoal/30 hover:text-charcoal transition-colors">Политика конфиденциальности</a>
