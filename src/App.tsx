@@ -14,7 +14,7 @@ const Footer = lazy(() => import('./components/Footer'))
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-sand-50">
       <Suspense fallback={<LoadingSpinner />}>
         <Header />
         <Hero />

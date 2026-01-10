@@ -1,0 +1,14 @@
+.stepNumber {
+    -webkit-text-stroke: 1px #B35C44;
+    -webkit-text-fill-color: transparent;
+}
+
+.stepIconContainer {
+    position: relative;
+    z-index: 10;
+}
+
+.line {
+    position: absolute;
+    background: rgba(179, 92, 68, 0.1);
+}

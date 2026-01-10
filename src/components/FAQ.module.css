@@ -1,0 +1,12 @@
+.accordionItem {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.accordionItem:last-child {
+    border-bottom: none;
+}
+
+.trigger {
+    width: 100%;
+    text-align: left;
+}

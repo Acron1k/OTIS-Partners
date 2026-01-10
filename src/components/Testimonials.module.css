@@ -1,0 +1,7 @@
+.carouselWrapper {
+    overflow: hidden;
+}
+
+.card {
+    user-select: none;
+}

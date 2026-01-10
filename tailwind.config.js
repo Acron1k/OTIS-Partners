@@ -7,22 +7,43 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
+        sans: ['Outfit', 'sans-serif'],
       },
       colors: {
         primary: {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
+          DEFAULT: '#B35C44', // Terracotta
+          50: '#fbf5f3',
+          100: '#f6ebe7',
+          200: '#edd8d1',
+          300: '#dfbaae',
+          400: '#ca907f',
+          500: '#b35c44',
+          600: '#a3503b',
+          700: '#874232',
+          800: '#6c362a',
+          900: '#592f25',
         },
+        sand: {
+          50: '#FAF9F6', // Bone / Off-white
+          100: '#F2F0E9',
+          200: '#E5E0D1',
+          300: '#D1C8B0',
+        },
+        charcoal: {
+          DEFAULT: '#121212',
+          800: '#1A1A1A',
+          900: '#0A0A0A',
+        }
       },
+      letterSpacing: {
+        tighter: '-0.05em',
+        tight: '-0.025em',
+        widest: '0.2em',
+      },
+      backgroundImage: {
+        'grain': "url('https://grain-y.com/images/grain.png')",
+      }
     },
   },
   plugins: [],

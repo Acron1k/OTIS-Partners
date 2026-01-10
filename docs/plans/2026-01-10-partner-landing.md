@@ -75,7 +75,7 @@
 
 ---
 
-## Phase 2: Header & Navigation (GLM 4.7)
+## Phase 2: Header & Navigation (gemini-pro)
 
 ### Task 2: Create Header component with sticky navigation
 
@@ -384,255 +384,227 @@ git commit -m "feat: add FAQ accordion section"
 
 ---
 
-## Phase 10: Contact Form (GLM 4.7 + Email Integration)
+## Задача 10: Форма заявки с валидацией
 
-### Task 10: Create Contact Form with validation
+**Агент:** GLM 4.7
 
-**Files:**
-- Create: `src/components/ContactForm.tsx`
-- Create: `src/components/ContactForm.module.css`
-- Create: `src/lib/validations/contact-form.ts`
-- Create: `src/lib/api/send-email.ts`
+**Что нужно сделать:**
 
-**Step 1: Create Zod validation schema**
+Создать форму заявки на партнёрство с валидацией и интеграцией:
+- Поля формы: имя, email, телефон, компания, тип партнёра, сообщение
+- Валидация всех полей на клиенте (обязательные поля, формат email, телефона)
+- Показ ошибок валидации рядом с полями
+- Индикатор загрузки при отправке
+- Сообщение об успехе после отправки
 
-Define form fields: name, email, phone, company, partner_type, message
+**Интеграция с Telegram:**
+- При отправке формы данные отправляются в Telegram-бота
+- Форматирование сообщения с информацией о заявке
+- Обработка успешной/неудачной отправки
 
-**Step 2: Create ContactForm component**
+**Интеграция с AMOCRM:**
+- Если есть прямой доступ к AMOCRM API - создавать сделку сразу
+- Если нет - отправлять данные на email с адресом AMOCRM для автоматического создания сделки
+- Использовать webhook или API для интеграции
 
-Implement form with React Hook Form, field inputs, validation errors, submit button
+**Дизайн формы:**
+- Современные поля ввода с плавающими лейблами
+- Кнопка "Отправить заявку" с эффектом при наведении
+- Красные ошибки валидации под полями
+- Спиннер загрузки вместо текста кнопки при отправке
+- Со об успехе с зелёным индикатором
 
-**Step 3: Add form styling**
-
-Modern input design, error message styling, submit button states
-
-**Step 4: Implement form submission handler**
-
-Validate with Zod, prepare email data, call API, handle success/error states
-
-**Step 5: Create email API function**
-
-Implement send-email.ts with EmailJS or webhook integration to existing CRM
-
-**Step 6: Add loading and success states**
-
-Show spinner while submitting, success message after submission
-
-**Step 7: Test form validation and submission**
-
-Verify field validation works, email sends successfully
-
-**Step 8: Commit**
-
-```bash
-git add .
-git commit -m "feat: add Contact Form with validation and email integration"
-```
+**Технические детали:**
+- Использовать React Hook Form для управления формой
+- Zod для схемы валидации
+- Отправлять данные в два места: Telegram + AMOCRM (или email)
 
 ---
 
-## Phase 11: Footer (GLM 4.7)
+## Задача 11: Футер сайта
 
-### Task 11: Create Footer component
+**Агент:** GLM 4.7
 
-**Files:**
-- Create: `src/components/Footer.tsx`
-- Create: `src/components/Footer.module.css`
+**Что нужно сделать:**
 
-**Step 1: Create Footer component**
+Создать футер сайта с полезной информацией:
+- Информация о компании Otis Peregorodki
+- Контактные данные (телефон, email, адрес)
+- Быстрые ссылки к секциям сайта
+- Ссылки на соцсети (Telegram, WhatsApp, Instagram и т.д.)
+- Копирайт с годом
 
-Company info, contact details, quick links, social links, copyright
+**Дизайн футера:**
+- Мультиколоночный layout на десктопе
+- Вертикальный стек на мобильных
+- Современный, чистый дизайн
+- Эффект при наведении на ссылки
+- Цветовая схема в соответствии с брендом (красные акценты)
 
-**Step 2: Design footer layout**
-
-Multi-column layout, responsive stacking on mobile
-
-**Step 3: Add styling**
-
-Modern footer design, hover effects on links
-
-**Step 4: Test responsiveness**
-
-Verify footer stacks correctly on mobile
-
-**Step 5: Commit**
-
-```bash
-git add .
-git commit -m "feat: add Footer component"
-```
+**Адаптивность:**
+- На десктопе: 3-4 колонки
+- На планшете: 2x2 сетка
+- На мобильных: всё вертикально
 
 ---
 
-## Phase 12: Performance Optimization (GLM 4.7)
+## Задача 12: Оптимизация производительности
 
-### Task 12: Optimize performance
+**Агент:** GLM 4.7
 
-**Files:**
-- Modify: `src/App.tsx`
-- Modify: `vite.config.ts`
+**Что нужно сделать:**
 
-**Step 1: Implement code splitting**
+Проверить и оптимизировать производительность сайта:
+- Проверить что код разделение (code splitting) работает корректно
+- Добавить lazy loading для всех изображений
+- Оптимизировать анимации (использовать transform, не layout properties)
+- Проверить поддержку prefers-reduced-motion для accessibility
+- Добавить атрибут loading="lazy" к изображениям
+- Проверить размер бандлей, при необходимости разделить дальше
 
-Already done with lazy loading in App.tsx - verify it works
+**Тестирование производительности:**
+- Запустить Lighthouse audit
+- Добиться 90+ баллов по Performance
+- Проверить First Contentful Paint (FCP)
+- Проверить Largest Contentful Paint (LCP)
+- Проверить Cumulative Layout Shift (CLS)
+- Проверить Time to Interactive (TTI)
 
-**Step 2: Add image optimization**
-
-Use Next.js Image equivalent or lazy load images, add loading attributes
-
-**Step 3: Optimize animations**
-
-Reduce motion for users with prefers-reduced-motion, use transform instead of layout properties
-
-**Step 4: Add service worker for caching**
-
-Optional: Implement PWA with offline capability
-
-**Step 5: Test performance**
-
-Run Lighthouse audit, aim for 90+ score
-
-**Step 6: Commit**
-
-```bash
-git add .
-git commit -m "perf: optimize performance with code splitting and animation improvements"
-```
+**Дополнительные оптимизации:**
+- Сжатие изображений (WebP формат)
+- Удаление неиспользуемого код
+- Минимизация CSS
 
 ---
 
-## Phase 13: Mobile Adaptation (GLM 4.7)
+## Задача 13: Мобильная адаптация
 
-### Task 13: Ensure full mobile responsiveness
+**Агент:** GLM 4.7
 
-**Files:**
-- Modify: All component CSS files
+**Что нужно сделать:**
 
-**Step 1: Test all sections on mobile**
+Проверить и исправить все проблемы на мобильных устройствах:
+- Открыть devtools с мобильным viewport
+- Проверить каждую секцию на разных размерах экрана
+- Найти и исправить проблемы с горизонтальным скроллом
+- Проверить на перекрытие элементов
+- Проверить размер шрифтов на маленьких экранах
+- Проверить размер tap targets (минимум 44x44px)
+- Проверить работу мобильного меню
 
-Open devtools with mobile viewport, test each section
+**Тестируемые breakpoint'ы:**
+- 375px (iPhone SE)
+- 414px (iPhone 12/13/14)
+- 768px (iPad)
+- 1024px (iPad Pro)
+- 1280px (маленький десктоп)
 
-**Step 2: Fix any mobile issues**
-
-Check for horizontal scrolling, overlapping elements, font sizes, tap targets
-
-**Step 3: Test on multiple breakpoints**
-
-375px, 414px, 768px, 1024px, 1280px
-
-**Step 4: Commit**
-
-```bash
-git add .
-git commit -m "fix: ensure full mobile responsiveness"
-```
-
----
-
-## Phase 14: SEO & Meta Tags (GLM 4.7)
-
-### Task 14: Optimize SEO
-
-**Files:**
-- Modify: `index.html`
-- Create: `public/robots.txt`
-- Create: `public/sitemap.xml`
-- Create: `public/og-image.png`
-
-**Step 1: Update meta tags in index.html**
-
-Add Open Graph tags, Twitter cards, canonical URL, structured data
-
-**Step 2: Create robots.txt**
-
-Allow crawling of all pages
-
-**Step 3: Create sitemap.xml**
-
-List all pages and sections
-
-**Step 4: Create OG image**
-
-Design social sharing image (1200x630px) for Facebook/LinkedIn
-
-**Step 5: Test meta tags**
-
-Use Facebook Debugger and Twitter Card Validator
-
-**Step 6: Commit**
-
-```bash
-git add .
-git commit -m "feat: add SEO optimization with meta tags and sitemap"
-```
+**Проверить на реальных устройствах:**
+- iPhone (iOS Safari)
+- Android (Chrome)
+- iPad
 
 ---
 
-## Phase 15: Testing & Deployment (GLM 4.7)
+## Задача 14: SEO оптимизация
 
-### Task 15: Final testing and deployment
+**Агент:** GLM 4.7
 
-**Files:**
-- Create: `public/vercel.json` (if deploying to Vercel)
-- Create: `.env.example`
+**Что нужно сделать:**
 
-**Step 1: Test all functionality**
+Оптимизировать сайт для поисковых систем:
+- Обновить мета-теги в index.html
+- Добавить Open Graph теги для Facebook/LinkedIn
+- Добавить Twitter Card теги
+- Указать canonical URL
+- Добавить структурированные данные (JSON-LD)
+- Создать robots.txt (разрешить индексацию)
+- Создать sitemap.xml
 
-- All sections render correctly
-- Forms validate and submit
-- Animations work smoothly
-- Mobile responsive
-- No console errors
+**Мета-теги:**
+- Title: оптимизированный для SEO (до 60 символов)
+- Description: оптимизированный для SEO (до 160 символов)
+- Keywords: партнёрская программа, перегородки, дизайнеры интерьера
+- Open Graph: title, description, image, url, type
+- Twitter Card: title, description, image, card type
 
-**Step 2: Build production bundle**
+**OG Image:**
+- Использовать одно из сгенерированных изображений перегородок
+- Размер: 1200x630px
+- Добавить текст "Партнёрская программа Otis"
 
-Run: `npm run build`
-Expected: Successful build with no errors
-
-**Step 3: Test production build locally**
-
-Run: `npm run preview`
-
-**Step 4: Configure deployment**
-
-Create vercel.json or other deployment config with environment variables
-
-**Step 5: Deploy to production**
-
-Push to git, deploy to Vercel/Netlify/custom server
-
-**Step 6: Post-deployment testing**
-
-- Test live site on all browsers
-- Verify forms work in production
-- Check analytics tracking
-
-**Step 7: Final commit**
-
-```bash
-git add .
-git commit -m "feat: complete partner landing page and deploy to production"
-```
+**Тестирование:**
+- Facebook Sharing Debugger
+- Twitter Card Validator
+- Google Rich Results Test
+- Проверить структурированные данные в Google Search Console
 
 ---
 
-## Agent Assignments Summary
+## Задача 15: Тестирование и деплой на Vercel
 
-**GLM 4.7 Agent:**
-- Phase 1: Project Setup & Foundation
-- Phase 2: Header & Navigation
-- Phase 10: Contact Form + Email Integration
-- Phase 11: Footer
-- Phase 12: Performance Optimization
-- Phase 13: Mobile Adaptation
-- Phase 14: SEO & Meta Tags
-- Phase 15: Testing & Deployment
+**Агент:** GLM 4.7
 
-**Gemini-Pro Agent (with frontend-design skill):**
-- Phase 3: Hero Section
-- Phase 4: Benefits Section
-- Phase 5: How It Works Section
-- Phase 6: Partnership Terms Section
-- Phase 7: Projects/Cases Section
-- Phase 8: Testimonials Section
-- Phase 9: FAQ Section
+**Что нужно сделать:**
+
+Финальное тестирование и деплой на Vercel для показа клиенту:
+
+**Финальное тестирование:**
+- Проверить что все секции рендерятся корректно
+- Проверить что форма валидируется и отправляется (Telegram + AMOCRM)
+- Проверить что все анимации работают плавно
+- Проверить мобильную адаптивность
+- Проверить что нет ошибок в console
+- Проверить все ссылки и навигацию
+
+**Сборка production:**
+- Запустить `npm run build`
+- Убедиться что сборка прошла без ошибок
+- Запустить `npm run preview` для локального тестирования
+
+**Подготовка к Vercel:**
+- Создать `.env.example` с примером переменных окружения:
+  - TELEGRAM_BOT_TOKEN
+  - TELEGRAM_CHAT_ID
+  - AMOCRM_API_KEY (если используется прямой API)
+  - AMOCRM_EMAIL (если отправляется на email)
+- Создать `vercel.json` с конфигурацией деплоя
+- Настроить build command: `npm run build`
+- Настроить output directory: `dist`
+
+**Деплой на Vercel:**
+- Запушить код в GitHub
+- Подключить репозиторий к Vercel
+- Добавить переменные окружения в Vercel Environment Variables
+- Деплойнуть
+- Получить URL для показа клиенту
+
+**Пост-деплой тестирование:**
+- Открыть сайт на разных браузерах (Chrome, Safari, Firefox)
+- Проверить что форма работает в production (Telegram + AMOCRM)
+- Проверить что все анимации работают
+- Проверить мобильную версию
+- Получить URL для показа клиенту (vercel.app или кастомный домен)
+
+---
+
+## Сводка по агентам
+
+**Задачи для GLM 4.7:**
+- ✅ Задача 1: Инициализация проекта (выполнена)
+- Задача 10: Форма заявки с валидацией (Telegram + AMOCRM)
+- Задача 11: Футер сайта
+- Задача 12: Оптимизация производительности
+- Задача 13: Мобильная адаптация
+- Задача 14: SEO оптимизация
+- Задача 15: Тестирование и деплой на Vercel
+
+**Задачи для Gemini-Pro (с frontend-design skill):**
+- ✅ Задача 2: Шапка сайта с навигацией (выполнена агентом)
+- ✅ Задача 3: Главная секция (Hero) с перегородкой (выполнена агентом)
+- ✅ Задача 4: Секция преимуществ (выполнена агентом)
+- ✅ Задача 5: Секция "Как это работает" (выполнена агентом)
+- ✅ Задача 6: Секция условий партнёрства (выполнена агентом)
+- ✅ Задача 7: Секция проектов/кейсов (выполнена агентом)
+- ✅ Задача 8: Секция отзывов (выполнена агентом)
+- ✅ Задача 9: Секция FAQ (выполнена агентом)

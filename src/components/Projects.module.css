@@ -1,0 +1,13 @@
+.gridItem {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+}
+
+.overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 60%);
+}
+
+.filterBtn.active {
+    background-color: #1f2937;
+    color: #ffffff;
+}
