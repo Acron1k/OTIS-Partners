@@ -4,7 +4,7 @@ const steps = [
   {
     id: "01",
     title: "Заявка",
-    description: "Связываетесь с нами любым удобным способом и передаете контакты клиента или параметры проекта.",
+    description: "Связываетесь с нами любым удобным способом и передаете контакты или параметры проекта.",
   },
   {
     id: "02",
@@ -25,16 +25,16 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 bg-sand-50">
+    <section id="how-it-works" className="py-16 md:py-24 bg-sand-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-24">
-          <span className="text-[10px] uppercase tracking-[0.4em] font-extrabold text-primary mb-3 block">Алгоритм</span>
-          <h2 className="text-4xl md:text-6xl font-black text-charcoal leading-tight">
+        <div className="text-center mb-12 md:mb-24">
+          <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-primary mb-2 block">Алгоритм</span>
+          <h2 className="text-3xl md:text-6xl font-black text-charcoal leading-tight">
             Простая схема <span className="text-primary italic">взаимодействия.</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 relative">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}
@@ -44,13 +44,13 @@ export default function HowItWorks() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="flex flex-col items-center text-center lg:items-start lg:text-left group"
             >
-              <div className="text-6xl font-black text-primary/10 mb-6 group-hover:text-primary/20 transition-colors">
+              <div className="text-5xl md:text-6xl font-black text-primary/10 mb-4 md:mb-6 group-hover:text-primary/20 transition-colors">
                 {step.id}
               </div>
-              <h3 className="text-lg font-bold uppercase tracking-widest text-charcoal mb-4">
+              <h3 className="text-base md:text-lg font-bold uppercase tracking-widest text-charcoal mb-2 md:mb-4">
                 {step.title}
               </h3>
-              <p className="text-charcoal/50 font-medium text-sm leading-relaxed">
+              <p className="text-charcoal/50 font-medium text-xs md:text-sm leading-relaxed max-w-[280px]">
                 {step.description}
               </p>
             </motion.div>

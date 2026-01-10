@@ -38,17 +38,17 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="py-24 bg-sand-100">
+    <section id="benefits" className="py-16 md:py-24 bg-sand-100">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-baseline justify-between mb-16 gap-8">
+        <div className="flex flex-col md:flex-row items-baseline justify-between mb-12 md:mb-16 gap-6 md:gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-xl"
           >
-            <span className="text-[10px] uppercase tracking-[.4em] font-extrabold text-primary mb-3 block">Преимущества</span>
-            <h2 className="text-4xl md:text-6xl font-black text-charcoal leading-[1.1]">
+            <span className="text-[10px] uppercase tracking-[.3em] font-extrabold text-primary mb-2 block">Преимущества</span>
+            <h2 className="text-3xl md:text-6xl font-black text-charcoal leading-tight">
               Ваш успех в <span className="text-primary italic">деталях.</span>
             </h2>
           </motion.div>
@@ -56,13 +56,13 @@ export default function Benefits() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-charcoal/50 max-w-xs font-medium leading-relaxed"
+            className="text-charcoal/50 text-sm md:text-base max-w-xs font-medium leading-relaxed"
           >
-            Работайте с лидером рынка. Мы берем на себя всю техническую часть, а вы получаете бонусы.
+            Работайте с лидером рынка. Мы берем на себя всю техническую часть.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -70,28 +70,28 @@ export default function Benefits() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`p-8 rounded-2xl flex ${benefit.isLarge ? 'flex-row items-center justify-between' : 'flex-col justify-between'} group cursor-default border border-charcoal/5 hover:border-primary/20 transition-all duration-500 ${benefit.className}`}
+              className={`p-6 md:p-8 rounded-2xl flex ${benefit.isLarge ? 'flex-col sm:flex-row items-start sm:items-center justify-between' : 'flex-col justify-between'} group cursor-default border border-charcoal/5 hover:border-primary/20 transition-all duration-500 ${benefit.className}`}
             >
-              <div className={`${benefit.isLarge ? 'flex-grow' : ''}`}>
-                <div className="flex items-center gap-4 mb-6">
-                  <benefit.icon className={`w-6 h-6 ${benefit.className.includes('bg-charcoal') || benefit.className.includes('bg-primary') ? 'text-sand-50/40' : 'text-primary'}`} />
-                  <h3 className="text-xl font-bold tracking-tight uppercase tracking-wider text-xs">{benefit.title}</h3>
+              <div className={`${benefit.isLarge ? 'flex-grow w-full' : ''}`}>
+                <div className="flex items-center gap-4 mb-4 md:mb-6">
+                  <benefit.icon className={`w-5 h-5 md:w-6 md:h-6 ${benefit.className.includes('bg-charcoal') || benefit.className.includes('bg-primary') ? 'text-sand-50/40' : 'text-primary'}`} />
+                  <h3 className="font-bold uppercase tracking-wider text-[10px] md:text-xs">{benefit.title}</h3>
                 </div>
 
                 {benefit.value && (
-                  <div className="text-7xl md:text-9xl font-black text-primary mb-4 leading-none">
+                  <div className="text-6xl md:text-9xl font-black text-primary mb-4 leading-none">
                     {benefit.value}
                   </div>
                 )}
 
-                <p className={`text-sm font-medium ${benefit.className.includes('text-sand-50') ? 'text-sand-50/60' : 'text-charcoal/50'}`}>
+                <p className={`text-xs md:text-sm font-medium ${benefit.className.includes('text-sand-50') ? 'text-sand-50/60' : 'text-charcoal/50'}`}>
                   {benefit.description}
                 </p>
               </div>
 
               {!benefit.isLarge && (
-                <div className="mt-8 flex justify-end">
-                  <ArrowUpRight className={`w-5 h-5 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1 ${benefit.className.includes('text-sand-50') ? 'text-sand-50' : 'text-primary'}`} />
+                <div className="mt-6 md:mt-8 flex justify-end">
+                  <ArrowUpRight className={`w-4 h-4 md:w-5 md:h-5 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1 ${benefit.className.includes('text-sand-50') ? 'text-sand-50' : 'text-primary'}`} />
                 </div>
               )}
             </motion.div>

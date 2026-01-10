@@ -5,19 +5,19 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
   {
     question: "Как и когда выплачиваются вознаграждения?",
-    answer: "Мы выплачиваем 10% в день поступления оплаты от клиента. Работаем официально: на расчетный счет ИП/ООО или банковскую карту по агентскому договору."
+    answer: "Мы выплачиваем 10% в день поступления оплаты от клиента. Работаем официально по агентскому договору."
   },
   {
     question: "Вы предоставляете образцы материалов?",
-    answer: "Да, для постоянных партнеров у нас есть Partner Box — стильный бокс с образцами всех видов закаленного стекла, профилей и фурнитуры."
+    answer: "Профессиональным партнерам мы предоставляем Partner Box с образцами стекла и профилей."
   },
   {
-    question: "Есть ли ограничения по сложности проектов?",
-    answer: "Мы специализируемся на индивидуальных решениях. Если конструкцию физически возможно реализовать из стекла и алюминия — мы это сделаем."
+    question: "Есть ли ограничения по сложности?",
+    answer: "Мы специализируемся на индивидуальных решениях любой сложности из стекла и алюминия."
   },
   {
-    question: "Каковы сроки изготовления и монтажа?",
-    answer: "Стандартный цикл производства составляет от 7 до 14 рабочих дней в зависимости от сложности и выбранной конфигурации."
+    question: "Каковы сроки изготовления?",
+    answer: "Стандартный цикл производства составляет от 7 до 14 рабочих дней."
   }
 ];
 
@@ -25,37 +25,37 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 bg-sand-50">
+    <section id="faq" className="py-16 md:py-24 bg-sand-50">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-20">
+        <div className="flex flex-col lg:flex-row gap-12 md:gap-20">
           <div className="lg:w-1/3">
-            <span className="text-[10px] uppercase tracking-[0.4em] font-extrabold text-primary mb-3 block">Вопросы</span>
-            <h2 className="text-4xl md:text-6xl font-black text-charcoal leading-none mb-10">
-              Помогаем разобраться <span className="text-primary italic">в деталях.</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-primary mb-2 block">Вопросы</span>
+            <h2 className="text-3xl md:text-6xl font-black text-charcoal leading-tight mb-8">
+              Помогаем <br className="hidden md:block" />разобраться <span className="text-primary italic">в деталях.</span>
             </h2>
-            <p className="text-charcoal/50 font-medium leading-relaxed mb-10">
-              Все, что вам нужно знать о технических и юридических аспектах нашего сотрудничества.
+            <p className="text-charcoal/50 text-sm md:text-base font-medium leading-relaxed mb-8">
+              Все, что вам нужно знать о технических и юридических аспектах сотрудничества.
             </p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-xs uppercase tracking-widest font-black text-primary border-b border-primary/20 pb-2 hover:border-primary transition-all"
+              className="text-[10px] md:text-xs uppercase tracking-widest font-black text-primary border-b border-primary/20 pb-2 hover:border-primary transition-all"
             >
               Задать свой вопрос
             </button>
           </div>
 
-          <div className="lg:w-2/3 divide-y divide-charcoal/5">
+          <div className="lg:w-2/3 divide-y divide-charcoal/5 self-start w-full">
             {faqs.map((faq, index) => (
               <div key={index}>
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full py-8 flex items-center justify-between text-left group"
+                  className="w-full py-6 md:py-8 flex items-center justify-between text-left group"
                 >
-                  <span className="text-lg md:text-xl font-bold text-charcoal group-hover:text-primary transition-colors">
+                  <span className="text-base md:text-xl font-bold text-charcoal group-hover:text-primary transition-colors max-w-[85%]">
                     {faq.question}
                   </span>
-                  <div className={`flex-shrink-0 ml-8 transition-transform duration-500 ${openIndex === index ? 'rotate-180' : ''}`}>
-                    {openIndex === index ? <Minus size={18} className="text-primary" /> : <Plus size={18} className="text-charcoal/20" />}
+                  <div className={`flex-shrink-0 ml-4 transition-transform duration-500 ${openIndex === index ? 'rotate-180' : ''}`}>
+                    {openIndex === index ? <Minus size={16} md:size={18} className="text-primary" /> : <Plus size={16} md:size={18} className="text-charcoal/20" />}
                   </div>
                 </button>
                 <AnimatePresence>
@@ -67,7 +67,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-8 text-charcoal/50 font-medium leading-relaxed max-w-2xl text-base italic">
+                      <p className="pb-6 md:pb-8 text-charcoal/50 font-medium leading-relaxed max-w-2xl text-sm md:text-base italic">
                         {faq.answer}
                       </p>
                     </motion.div>

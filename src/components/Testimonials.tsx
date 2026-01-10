@@ -40,21 +40,21 @@ export default function Testimonials() {
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section id="testimonials" className="py-24 bg-charcoal text-sand-50 overflow-hidden">
+    <section id="testimonials" className="py-16 md:py-24 bg-charcoal text-sand-50 overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
-          <div className="max-w-xl">
-            <span className="text-[10px] uppercase tracking-[0.4em] font-extrabold text-primary mb-3 block">Отзывы</span>
-            <h2 className="text-4xl md:text-6xl font-black leading-tight italic">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-16 gap-6">
+          <div className="max-w-xl text-center md:text-left">
+            <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-primary mb-2 block">Отзывы</span>
+            <h2 className="text-3xl md:text-6xl font-black leading-tight italic">
               Мнение <span className="text-primary not-italic">профессионалов.</span>
             </h2>
           </div>
           <div className="flex gap-4">
-            <button onClick={prevSlide} className="p-4 border border-sand-50/10 hover:border-primary transition-colors rounded-full">
-              <ChevronLeft size={20} />
+            <button onClick={prevSlide} className="p-3 md:p-4 border border-sand-50/10 hover:border-primary transition-colors rounded-full">
+              <ChevronLeft size={18} md:size={20} />
             </button>
-            <button onClick={nextSlide} className="p-4 border border-sand-50/10 hover:border-primary transition-colors rounded-full">
-              <ChevronRight size={20} />
+            <button onClick={nextSlide} className="p-3 md:p-4 border border-sand-50/10 hover:border-primary transition-colors rounded-full">
+              <ChevronRight size={18} md:size={20} />
             </button>
           </div>
         </div>
@@ -67,9 +67,9 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5 }}
-              className="grid lg:grid-cols-[1fr_2fr] gap-12 items-center"
+              className="grid lg:grid-cols-[1fr_2fr] gap-8 md:gap-12 items-center"
             >
-              <div className="relative aspect-square max-w-[200px] lg:max-w-none mx-auto w-full lg:w-48 overflow-hidden rounded-2xl shadow-2xl">
+              <div className="relative aspect-square max-w-[120px] md:max-w-none mx-auto w-full lg:w-48 overflow-hidden rounded-2xl shadow-2xl">
                 <img
                   src={testimonials[currentIndex].image}
                   alt={testimonials[currentIndex].name}
@@ -77,13 +77,13 @@ export default function Testimonials() {
                 />
               </div>
 
-              <div>
-                <p className="text-2xl md:text-3xl font-medium italic mb-10 leading-relaxed text-sand-50/80">
+              <div className="text-center lg:text-left">
+                <p className="text-lg md:text-3xl font-medium italic mb-6 md:mb-10 leading-relaxed text-sand-50/80">
                   «{testimonials[currentIndex].content}»
                 </p>
                 <div>
-                  <h4 className="text-xl font-bold tracking-tight mb-1 uppercase tracking-widest text-xs">{testimonials[currentIndex].name}</h4>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-primary">{testimonials[currentIndex].role}</p>
+                  <h4 className="font-bold tracking-tight mb-1 uppercase tracking-widest text-[10px] md:text-xs">{testimonials[currentIndex].name}</h4>
+                  <p className="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-primary">{testimonials[currentIndex].role}</p>
                 </div>
               </div>
             </motion.div>
