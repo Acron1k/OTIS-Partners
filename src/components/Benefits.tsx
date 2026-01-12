@@ -4,7 +4,11 @@ import {
   Zap,
   ShieldCheck,
   Hammer,
-  ArrowUpRight
+  ArrowUpRight,
+  Users,
+  Clock,
+  GraduationCap,
+  HelpCircle
 } from 'lucide-react';
 
 const benefits = [
@@ -17,22 +21,46 @@ const benefits = [
     isLarge: true
   },
   {
-    title: "Расчёт за 15 минут",
-    description: "Ценим время профессионалов.",
+    title: "Вам — только контакт",
+    description: "Остальное берём на себя: от замера до монтажа.",
     icon: Zap,
+    className: "bg-white",
+  },
+  {
+    title: "Свой штат специалистов",
+    description: "Замерщики, проектировщики и монтажники — в штате.",
+    icon: Users,
     className: "bg-white",
   },
   {
     title: "Гарантия 5 лет",
     description: "На все изделия и монтаж.",
     icon: ShieldCheck,
+    className: "bg-primary text-charcoal",
+  },
+  {
+    title: "Монтаж — 1 день с уборкой",
+    description: "Доставка и сборка за один день. Убираем за собой.",
+    icon: Clock,
     className: "bg-white",
   },
   {
-    title: "Монтаж «под ключ»",
-    description: "Контролируем каждый узел.",
+    title: "Отслеживание в Кайтене",
+    description: "Онлайн-статус от замера до монтажа для дилеров.",
     icon: Hammer,
-    className: "bg-primary text-sand-50",
+    className: "bg-white",
+  },
+  {
+    title: "Помощь с технической частью",
+    description: "Дизайнерам — консультируем и рассчитываем.",
+    icon: HelpCircle,
+    className: "bg-white",
+  },
+  {
+    title: "Обучение и образцы для салонов",
+    description: "Обучаем персонал, предоставляем образцы.",
+    icon: GraduationCap,
+    className: "bg-white",
   },
 ];
 
@@ -49,7 +77,7 @@ export default function Benefits() {
           >
             <span className="text-[10px] uppercase tracking-[.3em] font-extrabold text-primary mb-2 block">Преимущества</span>
             <h2 className="text-3xl md:text-6xl font-black text-charcoal leading-tight">
-              Ваш успех в <span className="text-primary italic">деталях.</span>
+              Полный сервис <span className="text-primary italic">от нас.</span>
             </h2>
           </motion.div>
           <motion.p
@@ -58,7 +86,7 @@ export default function Benefits() {
             viewport={{ once: true }}
             className="text-charcoal/50 text-sm md:text-base max-w-xs font-medium leading-relaxed"
           >
-            Работайте с лидером рынка. Мы берем на себя всю техническую часть.
+            Для дизайнеров, хоумстеджеров, мебельных салонов, салонов дверей и онлайн-магазинов.
           </motion.p>
         </div>
 
@@ -69,12 +97,12 @@ export default function Benefits() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               className={`p-6 md:p-8 rounded-2xl flex ${benefit.isLarge ? 'flex-col sm:flex-row items-start sm:items-center justify-between' : 'flex-col justify-between'} group cursor-default border border-charcoal/5 hover:border-primary/20 transition-all duration-500 ${benefit.className}`}
             >
               <div className={`${benefit.isLarge ? 'flex-grow w-full' : ''}`}>
                 <div className="flex items-center gap-4 mb-4 md:mb-6">
-                  <benefit.icon className={`w-5 h-5 md:w-6 md:h-6 ${benefit.className.includes('bg-charcoal') || benefit.className.includes('bg-primary') ? 'text-sand-50/40' : 'text-primary'}`} />
+                  <benefit.icon className={`w-5 h-5 md:w-6 md:h-6 ${benefit.className.includes('bg-charcoal') ? 'text-sand-50/40' : benefit.className.includes('text-charcoal') ? 'text-charcoal/60' : 'text-primary'}`} />
                   <h3 className="font-bold uppercase tracking-wider text-[10px] md:text-xs">{benefit.title}</h3>
                 </div>
 
@@ -84,14 +112,14 @@ export default function Benefits() {
                   </div>
                 )}
 
-                <p className={`text-xs md:text-sm font-medium ${benefit.className.includes('text-sand-50') ? 'text-sand-50/60' : 'text-charcoal/50'}`}>
+                <p className={`text-xs md:text-sm font-medium ${benefit.className.includes('text-sand-50') ? 'text-sand-50/60' : benefit.className.includes('text-charcoal') ? 'text-charcoal/60' : 'text-charcoal/50'}`}>
                   {benefit.description}
                 </p>
               </div>
 
               {!benefit.isLarge && (
                 <div className="mt-6 md:mt-8 flex justify-end">
-                  <ArrowUpRight className={`w-4 h-4 md:w-5 md:h-5 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1 ${benefit.className.includes('text-sand-50') ? 'text-sand-50' : 'text-primary'}`} />
+                  <ArrowUpRight className={`w-4 h-4 md:w-5 md:h-5 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1 ${benefit.className.includes('text-sand-50') || benefit.className.includes('text-charcoal') ? 'text-charcoal' : 'text-primary'}`} />
                 </div>
               )}
             </motion.div>

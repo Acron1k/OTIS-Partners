@@ -75,7 +75,7 @@ export default function Header() {
             ))}
             <button
               onClick={() => scrollToSection('#contact')}
-              className="bg-charcoal text-sand-50 px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-all duration-300"
+              className="bg-charcoal text-sand-50 px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-charcoal transition-all duration-300"
             >
               Стать партнёром
             </button>
@@ -114,7 +114,7 @@ export default function Header() {
               ))}
               <button
                 onClick={() => scrollToSection('#contact')}
-                className="w-full py-4 bg-primary text-white font-bold uppercase tracking-widest"
+                className="w-full py-4 bg-charcoal text-sand-50 font-bold uppercase tracking-widest"
               >
                 Стать партнёром
               </button>

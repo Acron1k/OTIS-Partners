@@ -132,7 +132,7 @@ export default function ContactForm() {
 
               <button
                 type="submit"
-                className="w-full py-6 md:py-8 text-xs font-black uppercase tracking-[0.4em] bg-primary text-sand-50 hover:bg-sand-50 hover:text-charcoal transition-all duration-700 shadow-2xl shadow-primary/20"
+                className="w-full py-6 md:py-8 text-xs font-black uppercase tracking-[0.4em] bg-primary text-charcoal hover:bg-sand-50 hover:text-charcoal transition-all duration-700 shadow-2xl shadow-primary/20"
               >
                 Отправить запрос
               </button>

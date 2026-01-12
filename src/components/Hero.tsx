@@ -40,8 +40,8 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-4xl md:text-7xl xl:text-8xl font-black leading-[1.1] md:leading-[1.05] text-charcoal tracking-tighter mb-6 md:mb-8"
             >
-              Эстетика <br className="hidden md:block" />
-              вашей <span className="text-primary">прибыли.</span>
+              Партнёрам — <br className="hidden md:block" />
+              только <span className="text-primary">контакты.</span>
             </motion.h1>
 
             <motion.p
@@ -50,7 +50,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-base md:text-xl text-charcoal/70 leading-relaxed mb-8 md:mb-10 max-w-lg"
             >
-              Создавайте премиальные пространства. Получайте <span className="text-charcoal font-bold">10% вознаграждения</span> за каждую реализованную перегородку.
+              Замер, 3D-макет, монтаж, уборка — мы делаем всё. <span className="text-charcoal font-bold">10% вознаграждения</span> за переданный контакт. Для дизайнеров, салонов и мебельных магазинов.
             </motion.p>
 
             <motion.div

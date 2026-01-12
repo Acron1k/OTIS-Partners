@@ -3,23 +3,23 @@ import { motion } from 'framer-motion';
 const steps = [
   {
     id: "01",
-    title: "Заявка",
-    description: "Связываетесь с нами любым удобным способом и передаете контакты или параметры проекта.",
+    title: "Передаёте контакт",
+    description: "Просто отправляете контакт клиента или параметры проекта. Больше ничего не нужно.",
   },
   {
     id: "02",
-    title: "Расчёт",
-    description: "Мы готовим детальное коммерческое предложение и техническую документацию за 15 минут.",
+    title: "Замер + 3D-макет",
+    description: "Наш замерщик выезжает, делает замер и готовит 3D-визуализацию с точной сметой.",
   },
   {
     id: "03",
-    title: "Реализация",
-    description: "Изготавливаем конструкции и производим чистый монтаж силами собственных бригад.",
+    title: "Производство и монтаж",
+    description: "Изготавливаем конструкции и монтируем за 1 день. Убираем за собой.",
   },
   {
     id: "04",
-    title: "Выплата",
-    description: "Сразу после оплаты заказа клиентом вы получаете свое партнерское вознаграждение.",
+    title: "Ваша выплата",
+    description: "Сразу после оплаты заказа клиентом вы получаете 10% партнерского вознаграждения.",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function HowItWorks() {
         <div className="text-center mb-12 md:mb-24">
           <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-primary mb-2 block">Алгоритм</span>
           <h2 className="text-3xl md:text-6xl font-black text-charcoal leading-tight">
-            Простая схема <span className="text-primary italic">взаимодействия.</span>
+            Вы — <span className="text-primary italic">контакт.</span> Мы — всё остальное.
           </h2>
         </div>
 
@@ -56,6 +56,17 @@ export default function HowItWorks() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 md:mt-16 text-center"
+        >
+          <p className="text-charcoal/40 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed">
+            Отслеживайте статус заказа в реальном времени в Кайтене — от замера до завершения монтажа.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

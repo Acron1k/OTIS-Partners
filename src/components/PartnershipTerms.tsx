@@ -3,30 +3,30 @@ import { Check } from 'lucide-react';
 
 const privileges = [
   {
-    target: "Дизайнерам",
+    target: "Дизайнерам и хоумстеджерам",
     items: [
+      "Помощь с технической частью",
       "Partner Box с образцами",
-      "Полная база 3D моделей",
-      "Фотосессия объекта",
-      "Упоминание в соцсетях"
+      "Консультации и расчёты",
+      "Проектировщики могут допродавать"
     ]
   },
   {
-    target: "Архитекторам",
+    target: "Мебельным салонам",
     items: [
-      "Техническое сопровождение",
-      "Расчет сложных нагрузок",
-      "Помощь в узлах",
-      "Шеф-монтаж"
+      "Образцы за нашу стоимость",
+      "Обучение персонала",
+      "Двери-купе и перегородки",
+      "Расширение ассортимента"
     ]
   },
   {
-    target: "Хоумстейджерам",
+    target: "Салонам дверей и онлайн-магазинам",
     items: [
-      "Готовые модули со склада",
-      "Монтаж за 48 часов",
-      "Бюджетная линейка",
-      "Экспресс-выезд"
+      "Раздвижные системы под ключ",
+      "Отслеживание в Кайтене",
+      "Полный сервис от замера",
+      "10% за переданный контакт"
     ]
   }
 ];
@@ -51,7 +51,7 @@ export default function PartnershipTerms() {
             </p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto bg-primary text-sand-50 px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-sand-50 hover:text-charcoal transition-all duration-500"
+              className="w-full sm:w-auto bg-primary text-charcoal px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-sand-50 hover:text-charcoal transition-all duration-500"
             >
               Присоединиться к программе
             </button>
@@ -72,7 +72,7 @@ export default function PartnershipTerms() {
                   {group.items.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 md:gap-3">
                       <Check className="w-3 h-3 md:w-4 md:h-4 text-primary shrink-0" />
-                      <span className="text-xs md:text-sm font-medium text-sand-50/70 italic">{item}</span>
+                      <span className="text-xs md:text-sm font-medium text-sand-50/70">{item}</span>
                     </div>
                   ))}
                 </div>

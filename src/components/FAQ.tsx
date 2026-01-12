@@ -4,16 +4,32 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   {
-    question: "Как и когда выплачиваются вознаграждения?",
-    answer: "Мы выплачиваем 10% в день поступления оплаты от клиента. Работаем официально по агентскому договору."
+    question: "Как и когда выплачивается вознаграждение?",
+    answer: "Выплачиваем 10% в день поступления оплаты от клиента. Работаем официально по агентскому договору."
   },
   {
-    question: "Вы предоставляете образцы материалов?",
-    answer: "Профессиональным партнерам мы предоставляем Partner Box с образцами стекла и профилей."
+    question: "Что именно нужно делать партнёру?",
+    answer: "Только передать контакт клиента или параметры проекта. Замер, 3D-макет, смета, монтаж, уборка — всё делаем мы сами."
   },
   {
-    question: "Есть ли ограничения по сложности?",
-    answer: "Мы специализируемся на индивидуальных решениях любой сложности из стекла и алюминия."
+    question: "Как вы помогаете дизайнерам и хоумстеджерам?",
+    answer: "Консультируем по технической части, рассчитываем конструкции, помогаем с подбором материалов. Дизайнеры часто не знают нюансов — мы подсказываем."
+  },
+  {
+    question: "Что предлагаете салонам и мебельным магазинам?",
+    answer: "Для салонов: образцы за нашу стоимость + обучение персонала. Для мебельных магазинов: расширяете ассортимент — двери-купе, перегородки, раздвижные системы."
+  },
+  {
+    question: "Можно ли отслеживать статус заказа?",
+    answer: "Да, партнёры видят статус в реальном времени в Кайтене — от замера до завершения монтажа."
+  },
+  {
+    question: "Как быстро происходит монтаж?",
+    answer: "Доставка и монтаж выполняются за один день. После себя убираем — клиенту остаётся только наслаждаться результатом."
+  },
+  {
+    question: "Смета может измениться после замера?",
+    answer: "Предварительная смета не меняется, если клиент верно передал все данные и не меняет наполнение или систему в процессе."
   },
   {
     question: "Каковы сроки изготовления?",
@@ -31,10 +47,10 @@ export default function FAQ() {
           <div className="lg:w-1/3">
             <span className="text-[10px] uppercase tracking-[0.3em] font-extrabold text-primary mb-2 block">Вопросы</span>
             <h2 className="text-3xl md:text-6xl font-black text-charcoal leading-tight mb-8">
-              Помогаем <br className="hidden md:block" />разобраться <span className="text-primary italic">в деталях.</span>
+              Остались <br className="hidden md:block" />вопросы? <span className="text-primary italic">Спросите.</span>
             </h2>
             <p className="text-charcoal/50 text-sm md:text-base font-medium leading-relaxed mb-8">
-              Все, что вам нужно знать о технических и юридических аспектах сотрудничества.
+              Для дизайнеров, салонов, хоумстеджеров и мебельных магазинов.
             </p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -67,7 +83,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-6 md:pb-8 text-charcoal/50 font-medium leading-relaxed max-w-2xl text-sm md:text-base italic">
+                      <p className="pb-6 md:pb-8 text-charcoal/50 font-medium leading-relaxed max-w-2xl text-sm md:text-base">
                         {faq.answer}
                       </p>
                     </motion.div>
