@@ -48,7 +48,11 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${isScrolled ? 'bg-sand-50/90 backdrop-blur-md py-3 shadow-sm border-b border-charcoal/5' : 'bg-transparent py-6 md:py-8'}`}
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+        isScrolled
+          ? 'bg-sand-50/90 backdrop-blur-md py-3 shadow-sm border-b border-charcoal/5'
+          : 'bg-white/90 backdrop-blur-md py-4 md:py-6 shadow-sm border-b border-white/20'
+      }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
@@ -75,7 +79,7 @@ export default function Header() {
             ))}
             <button
               onClick={() => scrollToSection('#contact')}
-              className="bg-charcoal text-sand-50 px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-charcoal transition-all duration-300"
+              className="bg-primary text-charcoal px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-charcoal hover:text-sand-50 transition-all duration-300 rounded-full"
             >
               Стать партнёром
             </button>
@@ -114,7 +118,7 @@ export default function Header() {
               ))}
               <button
                 onClick={() => scrollToSection('#contact')}
-                className="w-full py-4 bg-charcoal text-sand-50 font-bold uppercase tracking-widest"
+                className="w-full py-4 bg-primary text-charcoal font-bold uppercase tracking-widest rounded-full"
               >
                 Стать партнёром
               </button>

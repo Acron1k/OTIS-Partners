@@ -67,7 +67,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mb-8 md:mb-12"
           >
-            <span className="inline-flex items-center gap-3 px-5 py-2.5 md:px-6 md:py-3 bg-primary/10 backdrop-blur-md border border-primary/40">
+            <span className="inline-flex items-center gap-3 px-5 py-2.5 md:px-6 md:py-3 bg-primary/10 backdrop-blur-md border border-primary/40 rounded-full">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-xs md:text-sm font-bold text-primary tracking-widest uppercase">
                 Партнерская программа
@@ -128,7 +128,7 @@ export default function Hero() {
             {/* CTA Button */}
             <button
               onClick={scrollToContact}
-              className="group relative px-10 py-4 md:px-12 md:py-5 bg-primary text-charcoal text-sm md:text-base font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-500"
+              className="group relative px-10 py-4 md:px-12 md:py-5 bg-primary text-charcoal text-sm md:text-base font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-500 rounded-full"
             >
               <span className="relative z-10 flex items-center gap-4">
                 Стать партнёром
@@ -148,18 +148,18 @@ export default function Hero() {
       </div>
 
       {/* Floating Stats Cards - Glassmorphism */}
-      <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 right-6 md:right-auto">
-        <div className="flex flex-col sm:flex-row gap-4">
+      <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12">
+        <div className="flex flex-col gap-3">
           {/* Stats Card 1 */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className="backdrop-blur-xl bg-white/5 border border-white/10 p-5 md:p-6"
+            className="backdrop-blur-xl bg-white/5 border border-white/10 p-4 md:p-5 rounded-full"
           >
-            <div className="flex items-baseline gap-3">
-              <span className="text-3xl md:text-4xl font-black text-primary">20+</span>
-              <span className="text-xs md:text-sm text-sand-50/60 uppercase tracking-wider border-l border-white/10 pl-3">партнёров</span>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl md:text-3xl font-black text-primary">20+</span>
+              <span className="text-xs md:text-sm text-sand-50/60 uppercase tracking-wider">партнёров</span>
             </div>
           </motion.div>
 
@@ -168,11 +168,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.6 }}
-            className="backdrop-blur-xl bg-white/5 border border-white/10 p-5 md:p-6"
+            className="backdrop-blur-xl bg-white/5 border border-white/10 p-4 md:p-5 rounded-full"
           >
-            <div className="flex items-baseline gap-3">
-              <span className="text-3xl md:text-4xl font-black text-sand-50">3М+</span>
-              <span className="text-xs md:text-sm text-sand-50/60 uppercase tracking-wider border-l border-white/10 pl-3">выплачено</span>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl md:text-3xl font-black text-sand-50">3М+</span>
+              <span className="text-xs md:text-sm text-sand-50/60 uppercase tracking-wider">выплачено</span>
             </div>
           </motion.div>
         </div>
