@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowDown } from 'lucide-react';
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -12,112 +12,195 @@ export default function Hero() {
     }
   };
 
+  const scrollToNext = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section
       id="hero"
-      className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden bg-sand-50"
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-sand-50"
     >
-      {/* Background Image - Full Height */}
+      {/* Background Image with Grain Overlay */}
       <div className="absolute inset-0 w-full h-full">
         <img
           src="/images/partitions/partition-1.jpg"
           alt="OTIS Partition"
           className="w-full h-full object-cover object-center scale-x-[-1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-sand-50 via-sand-50/60 to-sand-50/30" />
+        {/* Gradient overlay - darker for contrast */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal/80 via-charcoal/50 to-sand-50/30" />
+        {/* Noise texture for atmosphere */}
+        <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+')]" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 w-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
+      {/* Decorative floating elements */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 0.1, x: 0 }}
+        transition={{ duration: 2, delay: 1 }}
+        className="absolute top-20 right-10 md:right-32 text-[12vw] md:text-[8vw] font-black text-primary/20 leading-none select-none"
+      >
+        10%
+      </motion.div>
 
-          {/* Text Content */}
-          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-4 lg:mb-6 flex items-center gap-3"
-            >
-              <div className="h-[2px] w-8 bg-primary rounded-full hidden lg:block" />
-              <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-extrabold text-primary">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 0.05, x: 0 }}
+        transition={{ duration: 2, delay: 1.2 }}
+        className="absolute bottom-32 left-10 md:left-20 text-[8vw] md:text-[5vw] font-black text-sand-50 leading-none select-none"
+      >
+        OTIS
+      </motion.div>
+
+      {/* Main Content - Centered Layout */}
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full">
+        <div className="flex flex-col items-center justify-center text-center">
+
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mb-8 md:mb-12"
+          >
+            <span className="inline-flex items-center gap-3 px-5 py-2.5 md:px-6 md:py-3 bg-primary/10 backdrop-blur-md border border-primary/30 rounded-full">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <span className="text-xs md:text-sm font-bold text-primary tracking-widest uppercase">
                 Партнерская программа
               </span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl md:text-7xl xl:text-8xl font-black leading-[1.1] md:leading-[1.05] text-charcoal tracking-tighter mb-6 md:mb-8"
-            >
-              <span className="text-primary">10%</span> за рекомендацию. <br />
-              Мы делаем всю работу.
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base md:text-xl text-charcoal/70 leading-relaxed mb-8 md:mb-10 max-w-lg"
-              >
-                Для дизайнеров, салонов и мебельных магазинов.
-              </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-6 items-center"
-            >
-              <button
-                onClick={scrollToContact}
-                className="w-full sm:w-auto bg-primary text-charcoal px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-charcoal hover:text-sand-50 transition-all duration-500 flex items-center justify-center gap-4 group shadow-xl shadow-primary/20"
-              >
-                Стать партнёром
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-              </button>
-
-              <div className="flex -space-x-3 overflow-hidden">
-                {[1, 2, 3, 4].map((i) => (
-                  <img
-                    key={i}
-                    className="inline-block h-8 w-8 md:h-10 md:w-10 rounded-full ring-2 ring-sand-50 object-cover"
-                    src={`https://i.pravatar.cc/100?img=${i + 10}`}
-                    alt="Partner"
-                  />
-                ))}
-                <div className="flex items-center justify-center h-8 w-8 md:h-10 md:w-10 rounded-full ring-2 ring-sand-50 bg-charcoal/10 text-[10px] font-bold text-charcoal/50">
-                  +20
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Stats Badge */}
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="w-full lg:w-auto lg:absolute lg:right-24 lg:bottom-12 bg-white/90 backdrop-blur-sm p-6 md:p-8 border border-charcoal/5 shadow-xl flex flex-col gap-4 md:gap-6 rounded-2xl max-w-xs"
-          >
-            <div className="flex justify-between items-end border-b border-charcoal/5 pb-4">
-              <div>
-                <p className="text-2xl md:text-3xl font-black text-charcoal leading-none mb-1">20+</p>
-                <p className="text-[10px] uppercase font-bold text-charcoal/40 tracking-widest">Партнёров</p>
-              </div>
-              <div className="text-right">
-                <p className="text-2xl md:text-3xl font-black text-primary leading-none mb-1">3М+</p>
-                <p className="text-[10px] uppercase font-bold text-charcoal/40 tracking-widest text-right">Выплачено</p>
-              </div>
-            </div>
-            <p className="text-[11px] md:text-xs text-charcoal/60 leading-relaxed">
-              Профессионалы выбирают наши решения
-            </p>
+            </span>
           </motion.div>
 
+          {/* Main Headline with Massive 10% */}
+          <div className="relative">
+            {/* Giant 10% Background */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 0.15, scale: 1 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
+              className="absolute -top-32 md:-top-48 left-1/2 -translate-x-1/2 text-[20vw] md:text-[28vw] font-black text-primary leading-none select-none pointer-events-none"
+            >
+              10%
+            </motion.div>
+
+            {/* Main Text */}
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="relative text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-sand-50 leading-tight tracking-tight"
+            >
+              <span className="block mb-2 md:mb-4">Зарабатывайте</span>
+              <span className="block relative">
+                <span className="text-primary">на перегородках</span>
+                <motion.span
+                  initial={{ width: 0 }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  className="absolute -bottom-2 left-0 h-3 md:h-4 bg-primary/40"
+                />
+              </span>
+            </motion.h1>
+          </div>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="mt-8 md:mt-10 text-base md:text-xl text-sand-50/70 max-w-xl leading-relaxed"
+          >
+            Передайте контакт — получайте <span className="text-primary font-bold">10%</span>.<br className="hidden md:block" />
+            Замер, монтаж, уборка — мы берём на себя.
+          </motion.p>
+
+          {/* CTA & Stats Row */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+            className="mt-10 md:mt-14 flex flex-col sm:flex-row items-center gap-6 md:gap-8"
+          >
+            {/* CTA Button */}
+            <button
+              onClick={scrollToContact}
+              className="group relative px-10 py-4 md:px-12 md:py-5 bg-primary text-charcoal text-sm md:text-base font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-500"
+            >
+              <span className="relative z-10 flex items-center gap-4">
+                Стать партнёром
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </span>
+            </button>
+
+            {/* Divider */}
+            <span className="hidden sm:block text-sand-50/30 text-2xl">•</span>
+
+            {/* Target Audience */}
+            <span className="text-sand-50/60 text-sm md:text-base">
+              Для <span className="text-sand-50">дизайнеров</span> и <span className="text-sand-50">салонов</span>
+            </span>
+          </motion.div>
         </div>
       </div>
+
+      {/* Floating Stats Cards - Glassmorphism */}
+      <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 right-6 md:right-auto">
+        <div className="flex flex-col sm:flex-row gap-4">
+          {/* Stats Card 1 */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+            className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-5 md:p-6"
+          >
+            <div className="flex items-baseline gap-2">
+              <span className="text-3xl md:text-4xl font-black text-primary">20+</span>
+              <span className="text-xs md:text-sm text-sand-50/70 uppercase tracking-wider">партнёров</span>
+            </div>
+          </motion.div>
+
+          {/* Stats Card 2 */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.6 }}
+            className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-5 md:p-6"
+          >
+            <div className="flex items-baseline gap-2">
+              <span className="text-3xl md:text-4xl font-black text-sand-50">3М+</span>
+              <span className="text-xs md:text-sm text-sand-50/70 uppercase tracking-wider">выплачено</span>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 2 }}
+        className="absolute bottom-8 md:bottom-12 right-6 md:right-12"
+      >
+        <button
+          onClick={scrollToNext}
+          className="flex flex-col items-center gap-2 text-sand-50/50 hover:text-primary transition-colors group"
+        >
+          <span className="text-[10px] uppercase tracking-widest">Листайте</span>
+          <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
+        </button>
+      </motion.div>
+
+      {/* Bottom Accent Line */}
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: '100%' }}
+        transition={{ duration: 1, delay: 1.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="absolute bottom-0 left-0 h-1 bg-primary"
+      />
     </section>
   );
 }
