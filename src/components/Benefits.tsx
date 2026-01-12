@@ -117,8 +117,9 @@ export default function Benefits() {
               <motion.div
                 key={benefit.id}
                 initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "-100px", amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 onClick={() => setSelectedBenefit(benefit)}
                 className={`p-6 md:p-8 rounded-2xl flex ${benefit.isLarge ? 'flex-col sm:flex-row items-start sm:items-center justify-between' : 'flex-col justify-between'} group cursor-pointer border border-charcoal/5 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 ${benefit.className}`}
