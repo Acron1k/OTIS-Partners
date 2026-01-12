@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen max-md:landscape:min-h-[700px] max-md:landscape:h-auto max-md:landscape:py-8 flex items-center justify-center overflow-hidden bg-sand-50"
+      className="relative h-screen max-md:landscape:h-auto max-md:landscape:min-h-screen flex items-center justify-center overflow-hidden bg-sand-50"
     >
       {/* Background Image with Grain Overlay */}
       <div className="absolute inset-0 w-full h-full">
@@ -37,12 +37,12 @@ export default function Hero() {
         <div className="absolute inset-0 opacity-10 mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+')]" />
       </div>
 
-      {/* Decorative floating elements */}
+      {/* Decorative floating elements - hide in landscape */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 0.1, x: 0 }}
         transition={{ duration: 2, delay: 1 }}
-        className="absolute top-20 right-10 md:right-32 max-md:landscape:top-4 max-md:landscape:right-4 text-[12vw] md:text-[8vw] max-md:landscape:text-[8vw] font-black text-primary/20 leading-none select-none"
+        className="absolute top-20 right-10 md:right-32 max-md:landscape:hidden text-[12vw] md:text-[8vw] font-black text-primary/20 leading-none select-none"
       >
         10%
       </motion.div>
@@ -56,20 +56,21 @@ export default function Hero() {
         OTIS
       </motion.div>
 
-      {/* Main Content - Centered Layout */}
+      {/* Main Content - Vertical layout for desktop, horizontal for landscape mobile */}
       <div className="container mx-auto px-6 md:px-12 relative z-10 w-full">
-        <div className="flex flex-col items-center justify-center text-center">
+        {/* Portrait mode: vertical centered layout */}
+        <div className="max-md:landscape:hidden flex flex-col items-center justify-center text-center">
 
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-8 md:mb-12 max-md:landscape:mb-4"
+            className="mb-8 md:mb-12"
           >
-            <span className="inline-flex items-center gap-3 px-5 py-2.5 md:px-6 md:py-3 max-md:landscape:px-4 max-md:landscape:py-1.5 bg-primary/10 backdrop-blur-md border border-primary/40 rounded-full">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse max-md:landscape:w-1.5 max-md:landscape:h-1.5" />
-              <span className="text-xs md:text-sm font-bold text-primary tracking-widest uppercase max-md:landscape:text-[10px]">
+            <span className="inline-flex items-center gap-3 px-5 py-2.5 md:px-6 md:py-3 bg-primary/10 backdrop-blur-md border border-primary/40 rounded-full">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <span className="text-xs md:text-sm font-bold text-primary tracking-widest uppercase">
                 Партнерская программа
               </span>
             </span>
@@ -82,7 +83,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 0.15, scale: 1 }}
               transition={{ duration: 1.5, delay: 0.5 }}
-              className="absolute -top-32 md:-top-48 left-1/2 -translate-x-1/2 max-md:landscape:-top-16 text-[20vw] md:text-[28vw] max-md:landscape:text-[15vw] font-black text-primary leading-none select-none pointer-events-none"
+              className="absolute -top-32 md:-top-48 left-1/2 -translate-x-1/2 text-[20vw] md:text-[28vw] font-black text-primary leading-none select-none pointer-events-none"
             >
               10%
             </motion.div>
@@ -92,16 +93,16 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative text-4xl md:text-6xl lg:text-7xl xl:text-8xl max-md:landscape:text-2xl font-black text-sand-50 leading-tight tracking-tight max-md:landscape:leading-snug"
+              className="relative text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-sand-50 leading-tight tracking-tight"
             >
-              <span className="block mb-2 md:mb-4 max-md:landscape:mb-1">Зарабатывайте</span>
+              <span className="block mb-2 md:mb-4">Зарабатывайте</span>
               <span className="block relative">
                 <span className="text-primary">на перегородках</span>
                 <motion.span
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ duration: 0.8, delay: 1.2 }}
-                  className="absolute -bottom-2 left-0 h-3 md:h-4 max-md:landscape:h-1.5 max-md:landscape:-bottom-1 bg-primary/40"
+                  className="absolute -bottom-2 left-0 h-3 md:h-4 bg-primary/40"
                 />
               </span>
             </motion.h1>
@@ -112,7 +113,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-8 md:mt-10 max-md:landscape:mt-4 text-base md:text-xl max-md:landscape:text-xs text-sand-50/70 max-w-xl leading-relaxed"
+            className="mt-8 md:mt-10 text-base md:text-xl text-sand-50/70 max-w-xl leading-relaxed"
           >
             Передайте контакт — получайте <span className="text-primary font-bold">10%</span>.<br className="hidden md:block" />
             Замер, монтаж, уборка — мы берём на себя.
@@ -123,43 +124,127 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="mt-10 md:mt-14 max-md:landscape:mt-4 flex flex-col sm:flex-row items-center gap-6 md:gap-8 max-md:landscape:gap-4"
+            className="mt-10 md:mt-14 flex flex-col sm:flex-row items-center gap-6 md:gap-8"
           >
             {/* CTA Button */}
             <button
               onClick={scrollToContact}
-              className="group relative px-10 py-4 md:px-12 md:py-5 max-md:landscape:px-6 max-md:landscape:py-2 bg-primary text-charcoal text-sm md:text-base max-md:landscape:text-xs font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-500 rounded-full"
+              className="group relative px-10 py-4 md:px-12 md:py-5 bg-primary text-charcoal text-sm md:text-base font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-500 rounded-full"
             >
-              <span className="relative z-10 flex items-center gap-4 max-md:landscape:gap-2">
+              <span className="relative z-10 flex items-center gap-4">
                 Стать партнёром
-                <ArrowRight className="w-5 h-5 max-md:landscape:w-4 max-md:landscape:h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
               </span>
             </button>
 
             {/* Divider */}
-            <span className="hidden sm:block text-sand-50/30 text-2xl max-md:landscape:text-lg">•</span>
+            <span className="hidden sm:block text-sand-50/30 text-2xl">•</span>
 
             {/* Target Audience */}
-            <span className="text-sand-50/60 text-sm md:text-base max-md:landscape:text-xs">
+            <span className="text-sand-50/60 text-sm md:text-base">
               Для <span className="text-sand-50">дизайнеров</span> и <span className="text-sand-50">салонов</span>
             </span>
           </motion.div>
         </div>
+
+        {/* Landscape mobile: horizontal compact layout */}
+        <div className="hidden max-md:landscape:flex flex-row items-center justify-between gap-4">
+          {/* Left: Text content */}
+          <div className="flex-1">
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-3"
+            >
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 backdrop-blur-md border border-primary/40 rounded-full">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+                <span className="text-[9px] font-bold text-primary tracking-widest uppercase">
+                  Партнерская программа
+                </span>
+              </span>
+            </motion.div>
+
+            {/* Main Text - Compact */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-lg md:text-xl font-black text-sand-50 leading-tight"
+            >
+              Зарабатывайте <span className="text-primary">на перегородках</span>
+            </motion.h1>
+
+            {/* Subtitle - Very compact */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-2 text-[10px] text-sand-50/60"
+            >
+              Передайте контакт — получайте <span className="text-primary font-bold">10%</span>
+            </motion.p>
+          </div>
+
+          {/* Right: Stats */}
+          <div className="flex gap-3">
+            {/* Stats Card 1 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="backdrop-blur-xl bg-white/5 border border-white/10 px-3 py-2 rounded-full"
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-base font-black text-primary">20+</span>
+                <span className="text-[9px] text-sand-50/60 uppercase tracking-wider">партнёров</span>
+              </div>
+            </motion.div>
+
+            {/* Stats Card 2 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="backdrop-blur-xl bg-white/5 border border-white/10 px-3 py-2 rounded-full"
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-base font-black text-sand-50">3М+</span>
+                <span className="text-[9px] text-sand-50/60 uppercase tracking-wider">выплачено</span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* CTA Button */}
+          <motion.button
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            onClick={scrollToContact}
+            className="shrink-0 px-5 py-2 bg-primary text-charcoal text-[10px] font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-300 rounded-full"
+          >
+            <span className="flex items-center gap-2">
+              Стать партнёром
+              <ArrowRight className="w-3 h-3" />
+            </span>
+          </motion.button>
+        </div>
       </div>
 
-      {/* Floating Stats Cards - Glassmorphism */}
-      <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 max-md:landscape:bottom-4 max-md:landscape:left-4">
-        <div className="flex flex-col gap-3 max-md:landscape:gap-2">
+      {/* Floating Stats Cards - Only show in portrait */}
+      <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 max-md:landscape:hidden">
+        <div className="flex flex-col gap-3">
           {/* Stats Card 1 */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className="backdrop-blur-xl bg-white/5 border border-white/10 p-4 md:p-5 max-md:landscape:p-2 rounded-full"
+            className="backdrop-blur-xl bg-white/5 border border-white/10 p-4 md:p-5 rounded-full"
           >
-            <div className="flex items-center gap-3 max-md:landscape:gap-2">
-              <span className="text-2xl md:text-3xl max-md:landscape:text-lg font-black text-primary">20+</span>
-              <span className="text-xs md:text-sm max-md:landscape:text-[10px] text-sand-50/60 uppercase tracking-wider">партнёров</span>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl md:text-3xl font-black text-primary">20+</span>
+              <span className="text-xs md:text-sm text-sand-50/60 uppercase tracking-wider">партнёров</span>
             </div>
           </motion.div>
 
@@ -168,22 +253,22 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.6 }}
-            className="backdrop-blur-xl bg-white/5 border border-white/10 p-4 md:p-5 max-md:landscape:p-2 rounded-full"
+            className="backdrop-blur-xl bg-white/5 border border-white/10 p-4 md:p-5 rounded-full"
           >
-            <div className="flex items-center gap-3 max-md:landscape:gap-2">
-              <span className="text-2xl md:text-3xl max-md:landscape:text-lg font-black text-sand-50">3М+</span>
-              <span className="text-xs md:text-sm max-md:landscape:text-[10px] text-sand-50/60 uppercase tracking-wider">выплачено</span>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl md:text-3xl font-black text-sand-50">3М+</span>
+              <span className="text-xs md:text-sm text-sand-50/60 uppercase tracking-wider">выплачено</span>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hide in landscape */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-8 md:bottom-12 right-6 md:right-12 max-md:landscape:bottom-4 max-md:landscape:right-4 max-md:landscape:hidden"
+        className="absolute bottom-8 md:bottom-12 right-6 md:right-12 max-md:landscape:hidden"
       >
         <button
           onClick={scrollToNext}
