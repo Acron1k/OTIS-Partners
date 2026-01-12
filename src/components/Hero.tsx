@@ -15,9 +15,19 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[calc(100vh-80px)] flex items-center pt-24 lg:pt-0 overflow-hidden bg-sand-50"
+      className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden bg-sand-50"
     >
-      <div className="container mx-auto px-6 relative z-10 w-full mb-12 lg:mb-0">
+      {/* Background Image - Full Height */}
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src="/images/partitions/partition-1.jpg"
+          alt="OTIS Partition"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-sand-50 via-sand-50/95 to-sand-50/70" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
 
           {/* Text Content */}
@@ -40,8 +50,8 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-4xl md:text-7xl xl:text-8xl font-black leading-[1.1] md:leading-[1.05] text-charcoal tracking-tighter mb-6 md:mb-8"
             >
-              Партнёрам — <br className="hidden md:block" />
-              только <span className="text-primary">контакты.</span>
+              Получайте <span className="text-primary">10%</span> <br className="hidden md:block" />
+              за рекомендацию.
             </motion.h1>
 
             <motion.p
@@ -49,9 +59,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-base md:text-xl text-charcoal/70 leading-relaxed mb-8 md:mb-10 max-w-lg"
-            >
-              Замер, 3D-макет, монтаж, уборка — мы делаем всё. <span className="text-charcoal font-bold">10% вознаграждения</span> за переданный контакт. Для дизайнеров, салонов и мебельных магазинов.
-            </motion.p>
+              >
+                Передайте контакт клиента — мы сделаем замер, 3D-макет и монтаж. Для дизайнеров, салонов и мебельных магазинов.
+              </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -61,7 +71,7 @@ export default function Hero() {
             >
               <button
                 onClick={scrollToContact}
-                className="w-full sm:w-auto bg-primary text-sand-50 px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-charcoal transition-all duration-500 flex items-center justify-center gap-4 group shadow-xl shadow-primary/20"
+                className="w-full sm:w-auto bg-primary text-charcoal px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-charcoal hover:text-sand-50 transition-all duration-500 flex items-center justify-center gap-4 group shadow-xl shadow-primary/20"
               >
                 Стать партнёром
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -76,52 +86,36 @@ export default function Hero() {
                     alt="Partner"
                   />
                 ))}
-                <div className="flex items-center justify-center h-8 w-8 md:h-10 md:w-10 rounded-full ring-2 ring-sand-50 bg-sand-100 text-[10px] font-bold text-charcoal/50">
+                <div className="flex items-center justify-center h-8 w-8 md:h-10 md:w-10 rounded-full ring-2 ring-sand-50 bg-charcoal/10 text-[10px] font-bold text-charcoal/50">
                   +20
                 </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Image Side */}
-          <div className="w-full lg:w-1/2 relative px-4 lg:px-0">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className="relative aspect-[4/3] lg:aspect-square xl:aspect-[4/3] overflow-hidden shadow-2xl rounded-2xl border border-charcoal/5"
-            >
-              <img
-                src="/images/partitions/partition-1.jpg"
-                alt="OTIS Partition"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-charcoal/5" />
-            </motion.div>
-
-            {/* Stats Badge */}
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="relative lg:absolute lg:-bottom-8 lg:-left-12 mt-6 lg:mt-0 bg-white p-6 md:p-8 border border-charcoal/5 shadow-xl flex flex-col gap-4 md:gap-6 w-full lg:min-w-[280px] rounded-xl"
-            >
-              <div className="flex justify-between items-end border-b border-charcoal/5 pb-4">
-                <div>
-                  <p className="text-2xl md:text-3xl font-black text-charcoal leading-none mb-1">20+</p>
-                  <p className="text-[10px] uppercase font-bold text-charcoal/40 tracking-widest">Партнёров</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-2xl md:text-3xl font-black text-primary leading-none mb-1">3М+</p>
-                  <p className="text-[10px] uppercase font-bold text-charcoal/40 tracking-widest text-right">Выплачено</p>
-                </div>
+          {/* Stats Badge */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="w-full lg:w-auto lg:absolute lg:right-24 lg:bottom-12 bg-white/90 backdrop-blur-sm p-6 md:p-8 border border-charcoal/5 shadow-xl flex flex-col gap-4 md:gap-6 rounded-2xl max-w-xs"
+          >
+            <div className="flex justify-between items-end border-b border-charcoal/5 pb-4">
+              <div>
+                <p className="text-2xl md:text-3xl font-black text-charcoal leading-none mb-1">20+</p>
+                <p className="text-[10px] uppercase font-bold text-charcoal/40 tracking-widest">Партнёров</p>
               </div>
-              <p className="text-[11px] md:text-xs text-charcoal/60 leading-relaxed italic">
-                «Мы гордимся тем, что профессионалы выбирают наши решения»
-              </p>
-            </motion.div>
-          </div>
+              <div className="text-right">
+                <p className="text-2xl md:text-3xl font-black text-primary leading-none mb-1">3М+</p>
+                <p className="text-[10px] uppercase font-bold text-charcoal/40 tracking-widest text-right">Выплачено</p>
+              </div>
+            </div>
+            <p className="text-[11px] md:text-xs text-charcoal/60 leading-relaxed">
+              Профессионалы выбирают наши решения
+            </p>
+          </motion.div>
+
         </div>
       </div>
     </section>
