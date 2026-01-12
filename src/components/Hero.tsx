@@ -147,88 +147,101 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Landscape mobile: horizontal compact layout */}
-        <div className="hidden mobile-landscape:flex flex-row items-center justify-between gap-4 px-4">
-          {/* Left: Text content */}
-          <div className="flex-1 min-w-0">
+        {/* Landscape mobile: balanced horizontal layout */}
+        <div className="hidden mobile-landscape:flex items-center justify-center gap-6 px-6 md:px-8 w-full">
+
+          {/* Left: Main content */}
+          <div className="flex-1 max-w-lg">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-2"
+              className="mb-3"
             >
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 backdrop-blur-md border border-primary/40 rounded-full">
                 <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                <span className="text-[9px] font-bold text-primary tracking-widest uppercase">
+                <span className="text-[10px] font-bold text-primary tracking-widest uppercase">
                   Партнерская программа
                 </span>
               </span>
             </motion.div>
 
-            {/* Main Text - Compact */}
+            {/* Main headline - full text, no truncation */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-base md:text-lg font-black text-sand-50 leading-tight truncate"
+              className="text-xl md:text-2xl font-black text-sand-50 leading-tight"
             >
               Зарабатывайте <span className="text-primary">на перегородках</span>
             </motion.h1>
 
-            {/* Subtitle - Very compact */}
+            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-[9px] md:text-[10px] text-sand-50/60 truncate"
+              className="mt-2 text-xs text-sand-50/70"
             >
               Передайте контакт — получайте <span className="text-primary font-bold">10%</span>
             </motion.p>
           </div>
 
-          {/* Right: Stats */}
-          <div className="flex gap-2 md:gap-3 shrink-0">
-            {/* Stats Card 1 */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="backdrop-blur-xl bg-white/5 border border-white/10 px-2 md:px-3 py-1.5 md:py-2 rounded-full"
-            >
-              <div className="flex items-center gap-1.5 md:gap-2">
-                <span className="text-sm md:text-base font-black text-primary">20+</span>
-                <span className="text-[8px] md:text-[9px] text-sand-50/60 uppercase tracking-wider hidden sm:inline">партнёров</span>
-              </div>
-            </motion.div>
-
-            {/* Stats Card 2 */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="backdrop-blur-xl bg-white/5 border border-white/10 px-2 md:px-3 py-1.5 md:py-2 rounded-full"
-            >
-              <div className="flex items-center gap-1.5 md:gap-2">
-                <span className="text-sm md:text-base font-black text-sand-50">3М+</span>
-                <span className="text-[8px] md:text-[9px] text-sand-50/60 uppercase tracking-wider hidden sm:inline">выплачено</span>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            onClick={scrollToContact}
-            className="shrink-0 px-4 md:px-5 py-1.5 md:py-2 bg-primary text-charcoal text-[9px] md:text-[10px] font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-300 rounded-full"
+          {/* Center: Giant 10% visual element */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-6xl md:text-7xl font-black text-primary/20 leading-none select-none shrink-0"
           >
-            <span className="flex items-center gap-1.5 md:gap-2">
-              Стать партнёром
-              <ArrowRight className="w-3 h-3" />
-            </span>
-          </motion.button>
+            10%
+          </motion.div>
+
+          {/* Right: CTA + Stats */}
+          <div className="flex flex-col items-end gap-3 shrink-0">
+
+            {/* Stats row */}
+            <div className="flex gap-2">
+              <motion.div
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="backdrop-blur-xl bg-white/5 border border-white/10 px-3 py-1.5 rounded-full"
+              >
+                <div className="flex items-center gap-1.5">
+                  <span className="text-base font-black text-primary">20+</span>
+                  <span className="text-[9px] text-sand-50/60 uppercase tracking-wider">партнёров</span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.65 }}
+                className="backdrop-blur-xl bg-white/5 border border-white/10 px-3 py-1.5 rounded-full"
+              >
+                <div className="flex items-center gap-1.5">
+                  <span className="text-base font-black text-sand-50">3М+</span>
+                  <span className="text-[9px] text-sand-50/60 uppercase tracking-wider">выплачено</span>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* CTA Button */}
+            <motion.button
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              onClick={scrollToContact}
+              className="px-6 py-2.5 bg-primary text-charcoal text-xs font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-300 rounded-full shadow-lg shadow-primary/20"
+            >
+              <span className="flex items-center gap-2">
+                Стать партнёром
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </motion.button>
+          </div>
         </div>
       </div>
 
