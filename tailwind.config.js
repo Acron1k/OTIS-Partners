@@ -42,5 +42,10 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    // Custom variant for mobile landscape (all phones in landscape, up to 1024px)
+    function({ addVariant }) {
+      addVariant('mobile-landscape', '@media (max-width: 1024px) and (orientation: landscape)');
+    }
+  ],
 }

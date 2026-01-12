@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen max-md:landscape:h-auto max-md:landscape:min-h-screen flex items-center justify-center overflow-hidden bg-sand-50"
+      className="relative h-screen mobile-landscape:h-auto mobile-landscape:min-h-screen flex items-center justify-center overflow-hidden bg-sand-50"
     >
       {/* Background Image with Grain Overlay */}
       <div className="absolute inset-0 w-full h-full">
@@ -42,7 +42,7 @@ export default function Hero() {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 0.1, x: 0 }}
         transition={{ duration: 2, delay: 1 }}
-        className="absolute top-20 right-10 md:right-32 max-md:landscape:hidden text-[12vw] md:text-[8vw] font-black text-primary/20 leading-none select-none"
+        className="absolute top-20 right-10 md:right-32 mobile-landscape:hidden text-[12vw] md:text-[8vw] font-black text-primary/20 leading-none select-none"
       >
         10%
       </motion.div>
@@ -51,7 +51,7 @@ export default function Hero() {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 0.05, x: 0 }}
         transition={{ duration: 2, delay: 1.2 }}
-        className="absolute bottom-32 left-10 md:left-20 max-md:landscape:hidden text-[8vw] md:text-[5vw] font-black text-sand-50 leading-none select-none"
+        className="absolute bottom-32 left-10 md:left-20 mobile-landscape:hidden text-[8vw] md:text-[5vw] font-black text-sand-50 leading-none select-none"
       >
         OTIS
       </motion.div>
@@ -59,7 +59,7 @@ export default function Hero() {
       {/* Main Content - Vertical layout for desktop, horizontal for landscape mobile */}
       <div className="container mx-auto px-6 md:px-12 relative z-10 w-full">
         {/* Portrait mode: vertical centered layout */}
-        <div className="max-md:landscape:hidden flex flex-col items-center justify-center text-center">
+        <div className="mobile-landscape:hidden flex flex-col items-center justify-center text-center">
 
           {/* Badge */}
           <motion.div
@@ -148,15 +148,15 @@ export default function Hero() {
         </div>
 
         {/* Landscape mobile: horizontal compact layout */}
-        <div className="hidden max-md:landscape:flex flex-row items-center justify-between gap-4">
+        <div className="hidden mobile-landscape:flex flex-row items-center justify-between gap-4 px-4">
           {/* Left: Text content */}
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-3"
+              className="mb-2"
             >
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 backdrop-blur-md border border-primary/40 rounded-full">
                 <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
@@ -171,7 +171,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-lg md:text-xl font-black text-sand-50 leading-tight"
+              className="text-base md:text-lg font-black text-sand-50 leading-tight truncate"
             >
               Зарабатывайте <span className="text-primary">на перегородках</span>
             </motion.h1>
@@ -181,24 +181,24 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-2 text-[10px] text-sand-50/60"
+              className="text-[9px] md:text-[10px] text-sand-50/60 truncate"
             >
               Передайте контакт — получайте <span className="text-primary font-bold">10%</span>
             </motion.p>
           </div>
 
           {/* Right: Stats */}
-          <div className="flex gap-3">
+          <div className="flex gap-2 md:gap-3 shrink-0">
             {/* Stats Card 1 */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="backdrop-blur-xl bg-white/5 border border-white/10 px-3 py-2 rounded-full"
+              className="backdrop-blur-xl bg-white/5 border border-white/10 px-2 md:px-3 py-1.5 md:py-2 rounded-full"
             >
-              <div className="flex items-center gap-2">
-                <span className="text-base font-black text-primary">20+</span>
-                <span className="text-[9px] text-sand-50/60 uppercase tracking-wider">партнёров</span>
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <span className="text-sm md:text-base font-black text-primary">20+</span>
+                <span className="text-[8px] md:text-[9px] text-sand-50/60 uppercase tracking-wider hidden sm:inline">партнёров</span>
               </div>
             </motion.div>
 
@@ -207,11 +207,11 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="backdrop-blur-xl bg-white/5 border border-white/10 px-3 py-2 rounded-full"
+              className="backdrop-blur-xl bg-white/5 border border-white/10 px-2 md:px-3 py-1.5 md:py-2 rounded-full"
             >
-              <div className="flex items-center gap-2">
-                <span className="text-base font-black text-sand-50">3М+</span>
-                <span className="text-[9px] text-sand-50/60 uppercase tracking-wider">выплачено</span>
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <span className="text-sm md:text-base font-black text-sand-50">3М+</span>
+                <span className="text-[8px] md:text-[9px] text-sand-50/60 uppercase tracking-wider hidden sm:inline">выплачено</span>
               </div>
             </motion.div>
           </div>
@@ -222,9 +222,9 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
             onClick={scrollToContact}
-            className="shrink-0 px-5 py-2 bg-primary text-charcoal text-[10px] font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-300 rounded-full"
+            className="shrink-0 px-4 md:px-5 py-1.5 md:py-2 bg-primary text-charcoal text-[9px] md:text-[10px] font-black uppercase tracking-widest hover:bg-sand-50 transition-all duration-300 rounded-full"
           >
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-1.5 md:gap-2">
               Стать партнёром
               <ArrowRight className="w-3 h-3" />
             </span>
@@ -233,7 +233,7 @@ export default function Hero() {
       </div>
 
       {/* Floating Stats Cards - Only show in portrait */}
-      <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 max-md:landscape:hidden">
+      <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 mobile-landscape:hidden">
         <div className="flex flex-col gap-3">
           {/* Stats Card 1 */}
           <motion.div
@@ -268,7 +268,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-8 md:bottom-12 right-6 md:right-12 max-md:landscape:hidden"
+        className="absolute bottom-8 md:bottom-12 right-6 md:right-12 mobile-landscape:hidden"
       >
         <button
           onClick={scrollToNext}
