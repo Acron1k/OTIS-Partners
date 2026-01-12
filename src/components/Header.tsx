@@ -50,17 +50,17 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
-          ? 'bg-sand-50/95 backdrop-blur-md py-3 shadow-sm border-b border-charcoal/5'
-          : 'bg-transparent py-6 md:py-8'
+          ? 'bg-sand-50/95 backdrop-blur-md py-3 mobile-landscape:py-2 shadow-sm border-b border-charcoal/5'
+          : 'bg-transparent py-6 md:py-8 mobile-landscape:py-3'
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 mobile-landscape:px-4">
+        <div className="flex items-center justify-between gap-2">
           <div
-            className="cursor-pointer flex flex-col items-start"
+            className="cursor-pointer flex flex-col items-start shrink-0"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <span className={`text-xl md:text-2xl font-black tracking-tighter transition-colors duration-300 ${
+            <span className={`text-xl md:text-2xl mobile-landscape:text-lg font-black tracking-tighter transition-colors duration-300 ${
               isScrolled ? 'text-charcoal' : 'text-sand-50'
             }`}>
               OTIS
@@ -97,11 +97,11 @@ export default function Header() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2 transition-colors duration-300 ${
+            className={`p-2 mobile-landscape:p-1.5 transition-colors duration-300 shrink-0 ${
               isScrolled ? 'text-charcoal' : 'text-sand-50'
             }`}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} className="mobile-landscape:w-5 mobile-landscape:h-5" /> : <Menu size={24} className="mobile-landscape:w-5 mobile-landscape:h-5" />}
           </button>
         </div>
       </div>
