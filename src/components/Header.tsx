@@ -16,7 +16,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -50,8 +50,8 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
-          ? 'bg-sand-50/90 backdrop-blur-md py-3 shadow-sm border-b border-charcoal/5'
-          : 'bg-white/90 backdrop-blur-md py-4 md:py-6 shadow-sm border-b border-white/20'
+          ? 'bg-sand-50/95 backdrop-blur-md py-3 shadow-sm border-b border-charcoal/5'
+          : 'bg-transparent py-6 md:py-8'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -60,7 +60,11 @@ export default function Header() {
             className="cursor-pointer flex flex-col items-start"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <span className="text-xl md:text-2xl font-black tracking-tighter text-charcoal">OTIS</span>
+            <span className={`text-xl md:text-2xl font-black tracking-tighter transition-colors duration-300 ${
+              isScrolled ? 'text-charcoal' : 'text-sand-50'
+            }`}>
+              OTIS
+            </span>
           </div>
 
           <nav className="hidden md:flex items-center space-x-10">
@@ -72,14 +76,20 @@ export default function Header() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-sm font-bold text-charcoal/70 hover:text-primary transition-colors uppercase tracking-widest"
+                className={`text-sm font-bold uppercase tracking-widest transition-colors duration-300 ${
+                  isScrolled ? 'text-charcoal/70 hover:text-primary' : 'text-sand-50/80 hover:text-primary'
+                }`}
               >
                 {link.name}
               </a>
             ))}
             <button
               onClick={() => scrollToSection('#contact')}
-              className="bg-primary text-charcoal px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-charcoal hover:text-sand-50 transition-all duration-300 rounded-full"
+              className={`px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-full ${
+                isScrolled
+                  ? 'bg-primary text-charcoal hover:bg-charcoal hover:text-sand-50'
+                  : 'bg-primary/10 border border-primary/40 text-primary hover:bg-primary hover:text-charcoal'
+              }`}
             >
               Стать партнёром
             </button>
@@ -87,7 +97,9 @@ export default function Header() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-charcoal p-2"
+            className={`p-2 transition-colors duration-300 ${
+              isScrolled ? 'text-charcoal' : 'text-sand-50'
+            }`}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
