@@ -22,9 +22,9 @@ export default function Hero() {
         <img
           src="/images/partitions/partition-1.jpg"
           alt="OTIS Partition"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center scale-x-[-1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-sand-50 via-sand-50/95 to-sand-50/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-sand-50 via-sand-50/85 to-sand-50/40" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 w-full">
@@ -51,7 +51,7 @@ export default function Hero() {
               className="text-4xl md:text-7xl xl:text-8xl font-black leading-[1.1] md:leading-[1.05] text-charcoal tracking-tighter mb-6 md:mb-8"
             >
               Получайте <span className="text-primary">10%</span> <br className="hidden md:block" />
-              за рекомендацию.
+              за рекомендацию наших <br className="hidden md:block" /> стеклянных перегородок.
             </motion.h1>
 
             <motion.p
