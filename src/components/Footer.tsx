@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-sand-50 pt-16 md:pt-24 pb-8 md:pb-12 border-t border-charcoal/5 relative overflow-hidden">
       {/* Decorative text */}
-      <div className="absolute top-0 right-0 font-black text-[25vw] lg:text-[20vw] leading-none text-charcoal/[0.02] translate-x-1/4 -translate-y-1/4 select-none pointer-events-none uppercase">
+      <div className="absolute top-4 right-0 font-black text-[20vw] lg:text-[16vw] leading-none text-charcoal/[0.02] translate-x-1/8 select-none pointer-events-none uppercase">
         Otis
       </div>
 

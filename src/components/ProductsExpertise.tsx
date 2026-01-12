@@ -2,25 +2,35 @@ import { motion } from 'framer-motion';
 
 const productTypes = [
     {
-        title: "Раздвижные",
-        description: "Элегантное решение для зонирования. Плавный ход и беспороговые системы.",
+        title: "Подвесная",
+        description: "Раздвижная система на верхнем рельсе. Без нижнего направляющего — идеальный ровный пол.",
+        image: "/images/partitions/partition-1.jpg"
+    },
+    {
+        title: "Опорная",
+        description: "Раздвижная система с нижним треком. Надёжная конструкция для частого использования.",
+        image: "/images/partitions/partition-2.jpg"
+    },
+    {
+        title: "Угловая",
+        description: "Раздвижные системы для угловых проёмов. Компактное решение для сложных планировок.",
+        image: "/images/partitions/partition-3.jpg"
+    },
+    {
+        title: "Стационарная",
+        description: "Статичная перегородка. Максимальная звукоизоляция и надёжность.",
         image: "/images/partitions/partition-4.jpg"
     },
     {
-        title: "Складные",
-        description: "Системы «книжка» для максимального раскрытия проема.",
+        title: "Складная «книжка»",
+        description: "Система складных дверей для максимального раскрытия проёма.",
         image: "/images/partitions/partition-5.jpg"
     },
     {
-        title: "Стационарные",
-        description: "Классическое разделение пространства с идеальной звукоизоляцией.",
+        title: "Двери-купе для шкафов",
+        description: "Вдвижные двери для гардеробных и шкафов-купе. Плавный ход и бесшумность.",
         image: "/images/partitions/partition-6.jpg"
     },
-    {
-        title: "Стеклянные",
-        description: "Цельностеклянные конструкции для ощущения абсолютного простора.",
-        image: "/images/partitions/partition-7.jpg"
-    }
 ];
 
 export default function ProductsExpertise() {
@@ -29,17 +39,17 @@ export default function ProductsExpertise() {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 md:mb-20 gap-6 md:gap-8">
                     <div className="max-w-2xl">
-                        <span className="text-[10px] uppercase tracking-[0.2em] font-extrabold text-primary mb-2 block">Экспертиза</span>
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-extrabold text-primary mb-2 block">Продукция</span>
                         <h2 className="text-3xl md:text-6xl font-black text-charcoal leading-tight">
-                            Решения для <br className="hidden md:block" /><span className="text-primary italic">любых задач.</span>
+                            Типы <br className="hidden md:block" /><span className="text-primary italic">перегородок.</span>
                         </h2>
                     </div>
                     <p className="text-charcoal/50 text-sm md:text-base max-w-sm font-medium leading-relaxed">
-                        От минималистичных лофт-перегородок до сложных трансформируемых систем.
+                        Раздвижные системы для любых задач: от зонирования помещений до шкафов-купе.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {productTypes.map((type, index) => (
                         <motion.div
                             key={type.title}
