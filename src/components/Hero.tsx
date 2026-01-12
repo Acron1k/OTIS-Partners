@@ -31,10 +31,10 @@ export default function Hero() {
           alt="OTIS Partition"
           className="w-full h-full object-cover object-center scale-x-[-1]"
         />
-        {/* Gradient overlay - darker for contrast */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal/80 via-charcoal/50 to-sand-50/30" />
+        {/* Darker overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal/90 via-charcoal/70 to-charcoal/50" />
         {/* Noise texture for atmosphere */}
-        <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+')]" />
+        <div className="absolute inset-0 opacity-10 mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+')]" />
       </div>
 
       {/* Decorative floating elements */}
@@ -67,7 +67,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mb-8 md:mb-12"
           >
-            <span className="inline-flex items-center gap-3 px-5 py-2.5 md:px-6 md:py-3 bg-primary/10 backdrop-blur-md border border-primary/30 rounded-full">
+            <span className="inline-flex items-center gap-3 px-5 py-2.5 md:px-6 md:py-3 bg-primary/10 backdrop-blur-md border border-primary/40">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-xs md:text-sm font-bold text-primary tracking-widest uppercase">
                 Партнерская программа
@@ -155,11 +155,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-5 md:p-6"
+            className="backdrop-blur-xl bg-white/5 border border-white/10 p-5 md:p-6"
           >
-            <div className="flex items-baseline gap-2">
+            <div className="flex items-baseline gap-3">
               <span className="text-3xl md:text-4xl font-black text-primary">20+</span>
-              <span className="text-xs md:text-sm text-sand-50/70 uppercase tracking-wider">партнёров</span>
+              <span className="text-xs md:text-sm text-sand-50/60 uppercase tracking-wider border-l border-white/10 pl-3">партнёров</span>
             </div>
           </motion.div>
 
@@ -168,11 +168,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.6 }}
-            className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-5 md:p-6"
+            className="backdrop-blur-xl bg-white/5 border border-white/10 p-5 md:p-6"
           >
-            <div className="flex items-baseline gap-2">
+            <div className="flex items-baseline gap-3">
               <span className="text-3xl md:text-4xl font-black text-sand-50">3М+</span>
-              <span className="text-xs md:text-sm text-sand-50/70 uppercase tracking-wider">выплачено</span>
+              <span className="text-xs md:text-sm text-sand-50/60 uppercase tracking-wider border-l border-white/10 pl-3">выплачено</span>
             </div>
           </motion.div>
         </div>
