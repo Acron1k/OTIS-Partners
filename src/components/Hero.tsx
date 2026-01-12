@@ -24,7 +24,7 @@ export default function Hero() {
           alt="OTIS Partition"
           className="w-full h-full object-cover object-center scale-x-[-1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-sand-50 via-sand-50/85 to-sand-50/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-sand-50 via-sand-50/60 to-sand-50/30" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 w-full">
@@ -50,8 +50,8 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-4xl md:text-7xl xl:text-8xl font-black leading-[1.1] md:leading-[1.05] text-charcoal tracking-tighter mb-6 md:mb-8"
             >
-              Получайте <span className="text-primary">10%</span> <br className="hidden md:block" />
-              за рекомендацию наших <br className="hidden md:block" /> стеклянных перегородок.
+              <span className="text-primary">10%</span> за рекомендацию. <br />
+              Мы делаем всю работу.
             </motion.h1>
 
             <motion.p
@@ -60,7 +60,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-base md:text-xl text-charcoal/70 leading-relaxed mb-8 md:mb-10 max-w-lg"
               >
-                Передайте контакт клиента — мы сделаем замер, 3D-макет и монтаж. Для дизайнеров, салонов и мебельных магазинов.
+                Для дизайнеров, салонов и мебельных магазинов.
               </motion.p>
 
             <motion.div
